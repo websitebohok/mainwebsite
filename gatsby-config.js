@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Bonneville`,
-    titleTemplate: `%s | A starter theme for Gatsby`,
+    title: `Kakbohok`,
+    titleTemplate: `%s | Tulis menulis`,
     description: `A starter theme for Gatsby`,
     siteUrl: `https://bonneville.netlify.com`,
     image: `/images/color.jpg`,
@@ -65,7 +65,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/src/content/blog`,
       },
     },
     {
