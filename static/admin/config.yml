@@ -12,6 +12,8 @@ collections:
     create: true
     slug: "{{title}}"
     path: "/{{slug}}"
+    media_folder: "src/content/images"
+    public_folder: "static/images"
     editor:
       preview: false
     fields:
