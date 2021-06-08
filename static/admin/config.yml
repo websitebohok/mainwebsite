@@ -12,7 +12,6 @@ collections:
     create: true
     slug: "{{slug}}"
     media_folder: "src/content/images"
-    public_folder: ""
     path: "/{{slug}}"
     editor:
       preview: false
@@ -40,3 +39,4 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Author", name: "author", widget: "string" }
