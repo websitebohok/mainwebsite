@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: "src/content/images"
+public_folder: "static/images"
 
 collections:
   - name: "blog"
@@ -11,7 +11,7 @@ collections:
     folder: "src/content"
     create: true
     slug: "{{title}}"
-    media_folder: "src/content/images"
+    path: "/{{slug}}"
     editor:
       preview: false
     fields:
@@ -24,17 +24,11 @@ collections:
           widget: "boolean",
           required: false,
         }
-      - {
-          label: "Featured Image",
-          name: "featuredimage",
-          widget: image,
-          required: false,
-        }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
       - {
           label: "Featured Image Alt",
           name: "featuredimagealt",
           widget: "string",
-          required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
