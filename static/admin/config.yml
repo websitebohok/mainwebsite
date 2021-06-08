@@ -10,9 +10,8 @@ collections:
     label: "Blog"
     folder: "src/content"
     create: true
-    slug: "{{slug}}"
+    slug: "{{title}}"
     media_folder: "src/content/images"
-    path: "/{{slug}}"
     editor:
       preview: false
     fields:
