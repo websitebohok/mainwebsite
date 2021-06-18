@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
+local_backend: true
+
 media_folder: "src/content/images"
 public_folder: "static/images"
 
@@ -10,9 +12,8 @@ collections:
     label: "Blog"
     folder: "src/content"
     create: true
-    slug: "{{title}}"
     path: "/{{slug}}"
-    media_folder: "src/content/images"
+    media_folder: "static/img"
     public_folder: "static/images"
     editor:
       preview: false

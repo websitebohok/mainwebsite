@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         "This is the error page. You can change this title in gatsby-node.js",
     },
   ]
-  pageData.forEach(page => {
+  pageData.forEach((page) => {
     createPage({
       path: `/${page.name}`,
       component: pageTemplate,
@@ -102,4 +102,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+}
+
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 }
