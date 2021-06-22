@@ -9,7 +9,7 @@ export const HeaderStyles = styled.header`
   justify-content: space-between;
   grid-template-columns: 200px auto;
   grid-gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background-color: #fff;
   transition: box-shadow var(--transMed) ease;
 
@@ -89,11 +89,14 @@ export const NavigationStyles = styled.nav`
 
     li {
       padding-left: 2rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-size: 1.15rem;
-      font-family: "Playfair Display";
-      font-weight: 300;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      font-family: "Raleway";
+
+      a {
+        font-weight: 700;
+      }
     }
 
     @media (min-width: 768px) {
@@ -111,7 +114,7 @@ export const NavigationStyles = styled.nav`
 export const BurgerStyles = styled.button`
   border: none;
   background-color: transparent;
-  font-family: var(--serif);
+  font-family: var(--sansSerif);
   color: var(--charcoal);
   display: flex;
   align-items: center;

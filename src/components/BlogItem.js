@@ -6,10 +6,15 @@ import PropTypes from "prop-types"
 
 const BlogItemStyles = styled.article`
   margin: calc(var(--spacing) * 4) 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-gap: var(--spacing);
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: auto auto auto;
+  // grid-gap: var(--spacing);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
 
   @media (min-width: 768px) {
     margin: calc(var(--spacing) * 6) 0;
@@ -46,8 +51,10 @@ const BlogItemStyles = styled.article`
   }
 
   h2 {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
+    width: 100%;
+    // flex-basis: 100%;
+    // grid-column: 1 / 3;
+    // grid-row: 2 / 3;
     font-size: var(--h3);
     margin: 0;
   }
@@ -63,8 +70,9 @@ const BlogItemStyles = styled.article`
   }
 
   > div {
-    grid-column: 1 / 3;
-    grid-row: 3 / 4;
+    width: 100%;
+    // grid-column: 1 / 3;
+    // grid-row: 3 / 4;
     p {
       margin-top: 0;
     }
@@ -84,7 +92,7 @@ const BlogItemStyles = styled.article`
 
     h4 {
       margin: 0;
-      font-size: var(--h5);
+      font-size: var(--h6);
       color: var(--primaryColor);
     }
   }
@@ -99,15 +107,6 @@ const BlogItem = ({ index, nodeObj }) => {
 
   return (
     <BlogItemStyles key={`blog-item-${index}`}>
-      {image && (
-        <figure>
-          <Link to={path}>
-            <span className="sr-only">{title}</span>
-            <GatsbyImage loading="lazy" image={image} alt={featuredImageAlt} />
-          </Link>
-        </figure>
-      )}
-
       {title && (
         <h2>
           <Link to={path}>{title}</Link>
@@ -116,11 +115,13 @@ const BlogItem = ({ index, nodeObj }) => {
 
       {excerpt && (
         <div>
-          <p>{excerpt}</p>
+          <Link to={path}>
+            <p>{excerpt}</p>
+          </Link>
           {path && (
             <div className="meta">
               <Link className="btn-link" to={path}>
-                Link here
+                Read more
               </Link>
               <h4>{date}</h4>
             </div>
@@ -140,3 +141,14 @@ BlogItem.propTypes = {
 }
 
 export default BlogItem
+
+// {
+//   image && (
+//     <figure>
+//       <Link to={path}>
+//         <span className="sr-only">{title}</span>
+//         <GatsbyImage loading="lazy" image={image} alt={featuredImageAlt} />
+//       </Link>
+//     </figure>
+//   )
+// }

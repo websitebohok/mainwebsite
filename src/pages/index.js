@@ -16,10 +16,7 @@ const HomePage = ({ data }) => {
   return (
     <>
       <Seo />
-      <Banner
-        content="My name is Bonneville. I'm a starter theme for Gatsby and I like to talk
-        as if I am a living thing"
-      />
+      <Banner content="Nama saya Bohok. Saya adalah pegawai penuh waktu di PT Alsafana Indonesia dan pegawai paruh waktu di Kolektif Agora" />
       <FeaturedItems>{BlogPostQuery.totalCount} Featured Posts</FeaturedItems>
       {BlogPostQuery.edges.map(({ node }, index) => (
         <BlogItem nodeObj={node} index={index} />

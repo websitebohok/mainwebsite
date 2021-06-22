@@ -3,7 +3,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 import Typography from "../styles/Typography"
-import Logo from "../content/images/bonneville-logo.svg"
+import Logo from "../content/images/kakbohok-logo.svg"
 
 const Layout = ({ children }) => {
   return (

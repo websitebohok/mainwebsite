@@ -36,14 +36,14 @@ const Footer = ({ Logo }) => {
               </Link>
             )}
             <address>
-              85 Simone Weil Avenue
+              Kuningan Dalam
               <br />
-              Watton-at-Stone
+              DKI Jakarta
               <br />
-              SG14 8BL
+              Indonesia
             </address>
-            <a className="telephone" href="tel:+004407076009211">
-              07076 009 211
+            <a className="telephone" href="tel:+628123456789">
+              +628123456789
             </a>
           </div>
         ) : null}
@@ -55,7 +55,7 @@ const Footer = ({ Logo }) => {
               <ul className="footer-menu">
                 {/* First we want to filter out the Home menu item, then display the rest of them */}
                 {mainMenuItems
-                  .filter(item => {
+                  .filter((item) => {
                     return item.title !== "home"
                   })
                   .map((item, index) => (
@@ -77,7 +77,7 @@ const Footer = ({ Logo }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {item.name}
+                        {item.icon}
                       </a>
                     </li>
                   )
@@ -128,7 +128,7 @@ Footer.propTypes = {
 const FooterStyles = styled.footer`
   padding: calc(var(--spacing) * 2);
   background-color: #f9f9f9;
-  font-family: var(--serif);
+  font-family: var(--sansSerif);
   font-weight: 300;
   font-style: normal;
   color: var(--charcoal);

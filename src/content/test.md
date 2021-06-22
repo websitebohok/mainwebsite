@@ -6,7 +6,7 @@ path: /kenapa-wawawawa
 featuredImage: ./images/dark-sky.jpg
 featuredImageAlt: "Dark abstract shapes"
 tags: ["data", "CMS"]
-author: Morgan Baker
+author: Si Aaaaa
 ---
 
 wawwawawaawwawawaaa

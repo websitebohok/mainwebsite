@@ -3,13 +3,13 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
   :root {
     --heavyWeight: 900;
-    --transMed: 0.3s;
-    --transSlow: 0.5s;
+    --transMed: 0.1s;
+    --transSlow: 0.3s;
     --black: #2d2828;
     --charcoal: #3e3e3e;
     --primaryColor: #939393;
-    --serif: "Playfair Display", serif;
-    --sansSerif: "Lato", sans-serif;
+    --serif: "Lora", serif;
+    --sansSerif: "Raleway", sans-serif;
     --h1: 2rem;
     --h2: 1.8rem;
     --h3: 1.5rem;
@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --h5: 1.15rem;
     --h6: 1rem;
     --footerMenuItem: 0.85rem;
-    --para: 1rem;
+    --para: 0.85rem;
     --spacing: 1rem;
 
     @media (min-width: 768px) {
@@ -42,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: var(--sansSerif);
+    font-family: var(--serif);
     color: var(--black);
     font-size: var(--para);
     margin: 0;
@@ -59,15 +59,14 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: var(--charcoal);
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
       text-decoration: none;
     }
 
-    &:hover,
-    &:visited {
-      color: var(--charcoal);
+    &:hover {
+      color: var(--primaryColor);
     }
   }
 
@@ -130,7 +129,7 @@ const GlobalStyles = createGlobalStyle`
     &-link {
       border: none;
       background-color: transparent;
-      font-size: var(--h5);
+      font-size: var(--h6);
       padding: 0;
       display: flex;
       font-family: var(--serif);
@@ -148,7 +147,7 @@ const GlobalStyles = createGlobalStyle`
         left: 0;
         bottom: -0.25rem;
         opacity: 1;
-        transition: opacity var(--transSlow);
+        transition: opacity var(--transMed);
       }
 
       &:hover,

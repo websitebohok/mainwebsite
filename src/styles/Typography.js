@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
-import "@fontsource/lato"
-import "@fontsource/playfair-display"
+import "@fontsource/lora"
+import "@fontsource/raleway"
 
 const Typography = createGlobalStyle`
 h1 {
@@ -10,6 +10,7 @@ h1 {
 
 p {
   margin: calc(var(--spacing) / 2) 0 var(--spacing) 0;
+  font-size: var(--para);
 }
 
 h1,
@@ -18,8 +19,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--sansSerif);
+  font-weight: var(--heavyWeight);
 }
 
 hr,
@@ -88,7 +89,7 @@ blockquote {
   box-sizing: border-box;
 
   p {
-    font-size: var(--h3);
+    font-size: var(--h4);
     margin: 0;
   }
 

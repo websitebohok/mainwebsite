@@ -18,16 +18,20 @@ const JournalTemplate = (props) => {
   return (
     <>
       <Seo title="Read more about the projects at Bonneville" />
-      <Banner content="Bonneville Journal" />
+      <Banner content="Jurnal Bohok" />
       <p>
         {" "}
-        This is the Bonneville journal. Here you will find an elegant blog
-        system that will help you make announcements to your cleints with ease.
+        This is the Bohok's Journal. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sit commodi, ex numquam vel qui id ut quia nobis,
+        sequi, ab in ea? Qui inventore fugiat, iure eveniet dicta vel nesciunt?
       </p>
       <p>
-        Each page displays a maximum of 10 posts before displaying the
-        pagination component. To change the maximum number of posts per page,
-        please visit gatsby-node.js.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+        adipisci veritatis impedit facere, sunt id ipsam dolores consectetur
+        perspiciatis nihil unde odio minus qui aut consequatur quasi! Maiores
+        illo architecto, adipisci in quae veniam ipsa recusandae commodi
+        accusamus tenetur officia cumque natus obcaecati voluptatem non unde ab
+        officiis ducimus corrupti?
       </p>
       {edges.map(({ node }, index) => {
         return <BlogItem nodeObj={node} index={index} />

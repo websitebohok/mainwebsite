@@ -2,7 +2,7 @@ import React from "react"
 
 const AboutPage = () => (
   <>
-    <h1>What is Bonneville?</h1>
+    <h1>Untuk apa ini?</h1>
     <p>
       Vestibulum rhoncus quam sit amet purus convallis vestibulum. Pellentesque
       faucibus, augue id auctor venenatis, tortor eros dapibus ante, et pulvinar

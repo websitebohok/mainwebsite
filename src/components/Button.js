@@ -12,21 +12,22 @@ const ButtonWrapper = styled.button`
   text-decoration: none;
   position: relative;
 
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 0.1rem;
-    width: 100%;
-    background-color: var(--charcoal);
-    left: 0;
-    bottom: -0.25rem;
-    opacity: 1;
-    transition: opacity var(--transSlow);
-  }
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   height: 0.1rem;
+  //   width: 100%;
+  //   background-color: var(--charcoal);
+  //   left: 0;
+  //   bottom: -0.25rem;
+  //   opacity: 1;
+  //   transition: opacity var(--transMed);
+  // }
 
   &:hover,
   &:focus {
+    color: var(--primaryColor);
     cursor: pointer;
 
     &:after {
@@ -39,7 +40,7 @@ const ButtonWrapper = styled.button`
   }
 `
 
-const Button = props => {
+const Button = (props) => {
   return (
     <ButtonWrapper type={props.type}>
       {props.text ? props.text : "Read Article"}{" "}
