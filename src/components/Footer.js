@@ -50,9 +50,29 @@ const Footer = ({ Logo }) => {
 
         {mainMenuItems || socialMenuItems || footerMenuItems ? (
           <div className="menus-cont">
+            {/* If social menu items are being imported, render this */}
+            {socialMenuItems && (
+              <ul className="footer-menu social-menu">
+                {socialMenuItems.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-icon"
+                      >
+                        {item.icon}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+
             {/* If main menu items are being imported, render this */}
             {mainMenuItems && (
-              <ul className="footer-menu">
+              <ul className="footer-menu main-menu">
                 {/* First we want to filter out the Home menu item, then display the rest of them */}
                 {mainMenuItems
                   .filter((item) => {
@@ -66,28 +86,9 @@ const Footer = ({ Logo }) => {
               </ul>
             )}
 
-            {/* If social menu items are being imported, render this */}
-            {socialMenuItems && (
-              <ul className="footer-menu">
-                {socialMenuItems.map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {item.icon}
-                      </a>
-                    </li>
-                  )
-                })}
-              </ul>
-            )}
-
             {/* If footer menu items are being imported, render this */}
             {footerMenuItems && (
-              <ul className="footer-menu">
+              <ul className="footer-menu additional-menu">
                 {footerMenuItems.map((item, index) => (
                   <li key={`footerMenuItem${index}`}>
                     <Link to={item.path}>{item.title}</Link>
@@ -196,6 +197,7 @@ const FooterStyles = styled.footer`
 
     a {
       display: inline-block;
+      width: 150px;
     }
 
     img {
@@ -210,6 +212,38 @@ const FooterStyles = styled.footer`
     margin-bottom: calc(var(--spacing) * 2);
     padding: 0;
     margin-bottom: calc(var(--spacing) * 2);
+
+    &.main-menu {
+      order: 2;
+    }
+
+    &.additional-menu {
+      order: 3;
+    }
+
+    &.social-menu {
+      order: 1;
+      display: flex;
+      flex-flow: row nowrap;
+      li {
+        padding: 0;
+        text-align: center;
+        a {
+          font-size: 1.5rem;
+          margin-right: 0.8rem;
+        }
+      }
+
+      @media (min-width: 375px) {
+        flex-flow: column nowrap;
+
+        li {
+          a {
+            margin-right: 0;
+          }
+        }
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -243,11 +277,11 @@ const FooterStyles = styled.footer`
   }
 
   .brand-cont {
-    width: 125px;
+    width: 150px;
 
     @media (min-width: 600px) {
-      width: 150px;
-      flex-basis: 150px;
+      width: 200px;
+      flex-basis: 200px;
       flex-shrink: 0;
       flex-grow: 0;
     }

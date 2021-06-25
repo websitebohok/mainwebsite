@@ -6,7 +6,7 @@ const Burger = () => {
   const [isOpen, setNav] = useContext(MenuContext)
 
   const toggleNav = () => {
-    setNav(isOpen => !isOpen)
+    setNav((isOpen) => !isOpen)
   }
 
   return (
@@ -15,7 +15,6 @@ const Burger = () => {
       type="button"
       className={isOpen ? "open" : "closed"}
     >
-      Menu
       <div>
         <span></span>
         <span></span>

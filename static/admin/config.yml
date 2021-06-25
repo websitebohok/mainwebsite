@@ -12,6 +12,7 @@ collections:
     label: "Blog"
     folder: "src/content"
     create: true
+    slug: "{{title}}"
     path: "/{{slug}}"
     media_folder: "static/img"
     public_folder: "static/images"
