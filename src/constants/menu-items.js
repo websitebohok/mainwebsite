@@ -14,6 +14,16 @@ export const mainMenuItems = [
   {
     path: "/journal",
     title: "journal",
+    subMenu: [
+      {
+        path: "/tags/data",
+        title: "sub1",
+      },
+      {
+        path: "/tags/cms",
+        title: "sub2",
+      },
+    ],
   },
   {
     path: "/contact",

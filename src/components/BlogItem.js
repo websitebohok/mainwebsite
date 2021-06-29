@@ -152,3 +152,29 @@ export default BlogItem
 //     </figure>
 //   )
 // }
+
+{
+  /* <BlogItemStyles key={`blog-item-${index}`}>
+      {title && (
+        <h2>
+          <Link to={path}>{title}</Link>
+        </h2>
+      )}
+
+      {excerpt && (
+        <div>
+          <Link to={path}>
+            <p>{excerpt}</p>
+          </Link>
+          {path && (
+            <div className="meta">
+              <Link className="btn-link" to={path}>
+                Read more
+              </Link>
+              <h4>{date}</h4>
+            </div>
+          )}
+        </div>
+      )}
+    </BlogItemStyles> */
+}

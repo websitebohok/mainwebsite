@@ -8,7 +8,7 @@ const Navigation = () => {
   const [isOpen, setNav] = useContext(MenuContext)
 
   const toggleNav = () => {
-    setNav(isOpen => !isOpen)
+    setNav((isOpen) => !isOpen)
   }
 
   return (
@@ -17,8 +17,19 @@ const Navigation = () => {
         {mainMenuItems.map((item, index) => (
           <li key={`menu-item-${index}`} className="nav-link">
             <Link to={item.path} onClick={toggleNav}>
-              {item.title}
+              {item.subMenu && item.subMenu.length > 0
+                ? item.title + " v"
+                : item.title}
             </Link>
+            {item.subMenu && item.subMenu.length > 0 ? (
+              <ul aria-label="submenu">
+                {item.subMenu.map((subLink) => (
+                  <li key={subLink.title}>
+                    <Link to={subLink.path}>{subLink.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </li>
         ))}
       </ul>

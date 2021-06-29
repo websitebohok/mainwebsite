@@ -8,11 +8,14 @@
   Website Kakbohok
 </h1>
 
-## Please Note
+## dev
 
 - search box
 - nav submenu
+  -- button (v)
+  -- submenu directory
 - primary and secondary color
+- fix footer social icon
 - categorized collection
 - netlify cms structure
 - night mode

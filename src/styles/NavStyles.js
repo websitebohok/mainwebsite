@@ -93,9 +93,45 @@ export const NavigationStyles = styled.nav`
       margin-bottom: 0.5rem;
       font-size: 0.85rem;
       font-family: "Raleway";
+      position: relative;
 
       a {
         font-weight: 700;
+      }
+
+      ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        // background: red;
+        transition: all 0.5s ease;
+        margin-top: 0rem;
+        list-style-type: none;
+        right: 0;
+        min-width: 6rem;
+        display: none;
+
+        li {
+          clear: both;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          a {
+            margin: 0.1rem 0;
+          }
+        }
+      }
+
+      &:hover > ul,
+      ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
       }
     }
 
