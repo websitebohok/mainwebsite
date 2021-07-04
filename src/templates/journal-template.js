@@ -74,6 +74,7 @@ export const journalQuery = graphql`
   query journalQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
       limit: $limit
       skip: $skip
     ) {

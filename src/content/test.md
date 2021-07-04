@@ -1,4 +1,5 @@
 ---
+templateKey: "post"
 title: Kenapa Wawawawa
 description: adalah wawawa
 date: 2019-09-21

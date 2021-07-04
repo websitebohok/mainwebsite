@@ -31,6 +31,7 @@ export const query = graphql`
   {
     BlogPostQuery: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "post" } } }
       limit: 3
     ) {
       totalCount

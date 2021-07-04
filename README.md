@@ -19,3 +19,4 @@
 - categorized collection
 - netlify cms structure
 - night mode
+- post font size
