@@ -3,8 +3,10 @@ templateKey: "post"
 title: Duis convallis eget elit eget efficitur
 description: Aliquam erat volutpat. Suspendisse potenti. Aenean eget tellus neque
 date: 2019-08-26
+featuredpost: true
 path: /duis-convallis-eget
 featuredImage: ./images/trees.jpg
+category: "category 1"
 tags: ["data", "seo"]
 author: Si Ccccc
 ---

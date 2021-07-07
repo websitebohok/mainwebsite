@@ -3,8 +3,10 @@ templateKey: "post"
 title: Morbi elit leo, auctor sed lectus
 description: Duis venenatis pretium lorem sit amet sollicitudin. Sed malesuada, nunc imperdiet
 date: 2019-08-26
+featuredpost: false
 path: /morbi-elit-leo
 featuredImage: ./images/dog.jpg
+category: "category 2"
 tags: ["data"]
 author: Si Ddddd
 ---
