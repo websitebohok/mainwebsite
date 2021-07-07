@@ -13,10 +13,31 @@
 - search box
 - nav submenu
   -- button (v)
-  -- submenu directory
+  -- submenu directory (v)
+  -- category paging control (v)
+  -- pagerstyle
+  -- journal nav
+  ---- style
+  -- remove nav submenu (v)
+- nav activeStyle
+- featured post in index.js
 - primary and secondary color
-- fix footer social icon
-- categorized collection
+- blogitem layout
+  -- flex row
+  -- image
+  -- minutes read
+  -- category
+  --
+- fix footer social icon (phone)
 - netlify cms structure
+  -- categorized collection
+- key in BlogItem.js
+  -- journal-template -> key={category-index}
+  -- category
+  -- index
+- post.js
+  -- font size
+  -- "return to journal home" --> "return to category"
+  -- "posted under {category}"
+- 404 page
 - night mode
-- post font size
