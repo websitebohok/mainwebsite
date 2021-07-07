@@ -39,10 +39,16 @@ collections:
           widget: "string",
         }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["category 1", "category 2", "category 3"],
+        }
       - { label: "Author", name: "author", widget: "string" }
   - name: "pages"
     label: "Pages"
+    create: false
     files:
       - file: "src/pages/index.md"
         label: "Home Page"
@@ -71,4 +77,159 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
           - { label: "Path", name: "path", widget: "hidden", default: "/about" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/contact/index.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "page-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/contact",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/cookies/index.md"
+        label: "Cookies Page"
+        name: "cookies"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "page-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/cookies",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/privacy/index.md"
+        label: "Privacy Page"
+        name: "privacy"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "page-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/pivacy",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "journal"
+    label: "Journal"
+    create: false
+    files:
+      - file: "src/pages/journal/index.md"
+        label: "Journal Page"
+        name: "journal"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "journal-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/journal",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/categories/category1.md"
+        label: "Category 1 Page"
+        name: "category-1"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "category",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "hidden",
+              default: "category 1",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/journal/category-1",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/categories/category2.md"
+        label: "Category 2 Page"
+        name: "category-2"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "category",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "hidden",
+              default: "category 2",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/journal/category-2",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/categories/category3.md"
+        label: "Category 3 Page"
+        name: "category-3"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "category",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "hidden",
+              default: "category 3",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/journal/category-3",
+            }
           - { label: "Body", name: "body", widget: "markdown" }
