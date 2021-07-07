@@ -1,24 +1,17 @@
 import { Link } from "gatsby"
 import React, { useContext } from "react"
-import { mainMenuItems } from "../constants/menu-items"
+import { journalMenuItems } from "../constants/menu-items"
 import { NavigationStyles } from "../styles/NavStyles"
 import MenuContext from "./MenuContext"
 
-const Navigation = () => {
-  const [isOpen, setNav] = useContext(MenuContext)
-
-  const toggleNav = () => {
-    setNav((isOpen) => !isOpen)
-  }
-
+const JournalNav = () => {
   return (
-    <NavigationStyles className={isOpen ? "open" : "closed"}>
+    <NavigationStyles>
       <ul>
-        {mainMenuItems.map((item, index) => (
+        {journalMenuItems.map((item, index) => (
           <li key={`menu-item-${index}`} className="nav-link">
             <Link
               to={item.path}
-              onClick={toggleNav}
               activeStyle={{
                 color: "blue",
               }}
@@ -32,4 +25,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default JournalNav

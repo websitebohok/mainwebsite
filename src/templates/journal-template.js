@@ -2,21 +2,17 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/SEO"
 import BlogItem from "../components/BlogItem"
+import JournalNav from "../components/JournalNav"
 import Button from "../components/Button"
 import { PagerStyles } from "../styles/JournalStyles"
 import Banner from "../components/Banner"
 
-const JournalTemplate = (props) => {
-  const { edges } = props.data.allMarkdownRemark
-
-  const { currentPage, numPages } = props.pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+const JournalTemplate = ({ data }) => {
+  const { allMarkdownRemark } = data
 
   return (
     <>
+      <JournalNav />
       <Seo title="Read more about the projects at Bonneville" />
       <Banner content="Jurnal Bohok" />
       <p>
@@ -33,37 +29,9 @@ const JournalTemplate = (props) => {
         accusamus tenetur officia cumque natus obcaecati voluptatem non unde ab
         officiis ducimus corrupti?
       </p>
-      {edges.map(({ node }, index) => {
+      {allMarkdownRemark.edges.map(({ node }, index) => {
         return <BlogItem nodeObj={node} index={index} />
       })}
-      {/* Paging controls
-        If there are multiple pages, show pager */}
-      {numPages > 1 && (
-        <PagerStyles>
-          <div className="btns">
-            {!isFirst && (
-              <Link to={`/journal/${prevPage}`} rel="prev">
-                <Button text="Previous" />
-              </Link>
-            )}
-            {!isLast && (
-              <Link to={`/journal/${nextPage}`} rel="next">
-                <Button text="Next" />
-              </Link>
-            )}
-          </div>
-          <div className="numbers">
-            {Array.from({ length: numPages }, (_, i) => (
-              <Link
-                key={`pagination-numbers${i + 1}`}
-                to={`/journal/${i === 0 ? "" : i + 1}`}
-              >
-                {i + 1}
-              </Link>
-            ))}
-          </div>
-        </PagerStyles>
-      )}
     </>
   )
 }
@@ -71,25 +39,15 @@ const JournalTemplate = (props) => {
 export default JournalTemplate
 
 export const journalQuery = graphql`
-  query journalQuery($skip: Int!, $limit: Int!) {
+  query journalQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "post" } } }
-      limit: $limit
-      skip: $skip
+      filter: { frontmatter: { templateKey: { eq: "category" } } }
     ) {
       edges {
         node {
           frontmatter {
             title
-            date(formatString: "MMMM DD, YY")
             path
-            tags
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-            }
           }
           excerpt
         }

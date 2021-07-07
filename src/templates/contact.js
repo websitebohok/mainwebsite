@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Seo from "../components/SEO"
 import styled from "styled-components"
 import Button from "../components/Button"
@@ -39,23 +40,19 @@ const FormTextArea = styled.textarea`
   border: 1px solid rgba(0, 0, 0, 0.25);
 `
 
-const ContactPage = () => {
+const ContactPage = ({
+  data: {
+    markdownRemark: { frontmatter, html },
+  },
+}) => {
   return (
     <>
-      <Seo
-        title="Get in touch"
-        description="Contact Bonneville about your next project"
+      <Seo title={frontmatter.title} description={frontmatter.description} />
+      <Banner content={frontmatter.title} />
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: html }}
       />
-      <Banner content="Get in touch today" />
-      <p>
-        Fusce eu tincidunt felis. Ut auctor urna et nibh lacinia, id efficitur
-        ipsum blandit. Aliquam vulputate sapien sit amet ante varius vestibulum.
-        Morbi sodales, quam quis tincidunt venenatis, nibh lorem viverra velit,
-        ac ultrices ligula nisi id justo. Vestibulum imperdiet fermentum ante eu
-        fermentum. Sed et orci pretium, ullamcorper nisi nec, dignissim erat.
-        Sed eu consequat neque, interdum malesuada eros. Ut maximus gravida
-        malesuada.{" "}
-      </p>
       <Form>
         <form name="contact" netlify>
           <p>
@@ -80,3 +77,16 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
+export const pageQuery = graphql`
+  query ($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        path
+        title
+        description
+      }
+    }
+  }
+`

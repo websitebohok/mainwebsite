@@ -11,12 +11,19 @@ const FeaturedItems = styled.h4`
 `
 
 const HomePage = ({ data }) => {
-  const { BlogPostQuery } = data
+  const { HomePageQuery, BlogPostQuery } = data
 
   return (
     <>
-      <Seo />
-      <Banner content="Nama saya Bohok. Saya adalah pegawai penuh waktu di PT Alsafana Indonesia dan pegawai paruh waktu di Kolektif Agora" />
+      <Seo
+        title={HomePageQuery.frontmatter.title}
+        description={HomePageQuery.frontmatter.description}
+      />
+      <Banner content={HomePageQuery.frontmatter.title} />
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: HomePageQuery.html }}
+      />
       <FeaturedItems>{BlogPostQuery.totalCount} Featured Posts</FeaturedItems>
       {BlogPostQuery.edges.map(({ node }, index) => (
         <BlogItem nodeObj={node} index={index} />
@@ -29,6 +36,16 @@ export default HomePage
 
 export const query = graphql`
   {
+    HomePageQuery: markdownRemark(
+      frontmatter: { templateKey: { eq: "index" } }
+    ) {
+      frontmatter {
+        title
+        description
+      }
+      html
+    }
+
     BlogPostQuery: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { templateKey: { eq: "post" } } }
@@ -39,7 +56,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MMMM DD, YY")
+            date(formatString: "MMM DD, YYYY")
             path
             featuredImage {
               childImageSharp {

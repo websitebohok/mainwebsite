@@ -6,30 +6,20 @@ import PropTypes from "prop-types"
 
 const BlogItemStyles = styled.article`
   margin: calc(var(--spacing) * 4) 0;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-rows: auto auto auto;
-  // grid-gap: var(--spacing);
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
 
   @media (min-width: 768px) {
-    margin: calc(var(--spacing) * 6) 0;
-    grid-template-rows: auto auto;
-    grid-gap: calc(var(--spacing) * 2);
+    margin: calc(var(--spacing) * 4) 0;
   }
 
   @media (min-width: 1200px) {
-    margin: calc(var(--spacing) * 8) 0;
-    grid-gap: calc(var(--spacing) * 3);
+    margin: calc(var(--spacing) * 4) 0;
   }
 
   > figure {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
     overflow: hidden;
     background-color: #000;
     margin: 0;
@@ -52,11 +42,8 @@ const BlogItemStyles = styled.article`
 
   h2 {
     width: 100%;
-    // flex-basis: 100%;
-    // grid-column: 1 / 3;
-    // grid-row: 2 / 3;
     font-size: var(--h3);
-    margin: 0;
+    margin: 0.5rem 0;
   }
 
   a {
@@ -65,21 +52,16 @@ const BlogItemStyles = styled.article`
 
   @media (min-width: 768px) {
     h2 {
-      grid-column: 1 / 2;
+      margin: 1rem 0;
     }
   }
 
   > div {
     width: 100%;
-    // grid-column: 1 / 3;
-    // grid-row: 3 / 4;
     p {
       margin-top: 0;
     }
     @media (min-width: 768px) {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-
       p {
         margin-bottom: calc(var(--spacing) * 2);
       }
@@ -107,27 +89,25 @@ const BlogItem = ({ index, nodeObj }) => {
 
   return (
     <BlogItemStyles key={`blog-item-${index}`}>
-      {title && (
-        <h2>
-          <Link to={path}>{title}</Link>
-        </h2>
-      )}
+      <Link to={path}>
+        {title && <h2>{title}</h2>}
 
-      {excerpt && (
-        <div>
-          <Link to={path}>
-            <p>{excerpt}</p>
-          </Link>
-          {path && (
-            <div className="meta">
-              <Link className="btn-link" to={path}>
-                Read more
-              </Link>
-              <h4>{date}</h4>
-            </div>
-          )}
-        </div>
-      )}
+        {excerpt && (
+          <div>
+            <Link to={path}>
+              <p>{excerpt}</p>
+            </Link>
+            {path && (
+              <div className="meta">
+                <Link className="btn-link" to={path}>
+                  Read more
+                </Link>
+                <h4>{date}</h4>
+              </div>
+            )}
+          </div>
+        )}
+      </Link>
     </BlogItemStyles>
   )
 }

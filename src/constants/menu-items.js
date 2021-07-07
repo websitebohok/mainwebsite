@@ -14,20 +14,26 @@ export const mainMenuItems = [
   {
     path: "/journal",
     title: "journal",
-    subMenu: [
-      {
-        path: "/tags/data",
-        title: "sub1",
-      },
-      {
-        path: "/tags/cms",
-        title: "sub2",
-      },
-    ],
   },
   {
     path: "/contact",
     title: "contact",
+  },
+]
+
+export const journalMenuItems = [
+  { path: "/journal", title: "journal" },
+  {
+    path: "/journal/category-1",
+    title: "category1",
+  },
+  {
+    path: "/journal/category-2",
+    title: "category2",
+  },
+  {
+    path: "/journal/category-3",
+    title: "category3",
   },
 ]
 

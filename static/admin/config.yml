@@ -4,21 +4,25 @@ backend:
 
 local_backend: true
 
-media_folder: "src/content/images"
-public_folder: "static/images"
+media_folder: static/img
+public_folder: /images
 
 collections:
   - name: "blog"
     label: "Blog"
     folder: "src/content"
     create: true
-    slug: "{{title}}"
-    path: "/{{slug}}"
-    media_folder: "static/img"
-    public_folder: "static/images"
+    slug: "{{slug}}"
     editor:
       preview: false
     fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post",
+        }
+      - { label: "Path", name: "path", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -26,7 +30,7 @@ collections:
           label: "Featured Post",
           name: "featuredpost",
           widget: "boolean",
-          required: false,
+          default: false,
         }
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - {
@@ -37,3 +41,34 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Author", name: "author", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Path", name: "path", widget: "hidden", default: "/" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "page-template",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Path", name: "path", widget: "hidden", default: "/about" }
+          - { label: "Body", name: "body", widget: "markdown" }
