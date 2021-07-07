@@ -39,7 +39,7 @@ const Category = (props) => {
         officiis ducimus corrupti?
       </p>
       {edges.map(({ node }, index) => {
-        return <BlogItem nodeObj={node} index={index} />
+        return <BlogItem nodeObj={node} itemKey={`blog-post-${index}`} />
       })}
       {/* Paging controls */}
       {/* If there are multiple pages, show pager */}

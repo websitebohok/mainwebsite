@@ -26,7 +26,7 @@ const HomePage = ({ data }) => {
       />
       <FeaturedItems>{BlogPostQuery.totalCount} Featured Posts</FeaturedItems>
       {BlogPostQuery.edges.map(({ node }, index) => (
-        <BlogItem nodeObj={node} index={index} />
+        <BlogItem nodeObj={node} itemKey={`blog-post-${index}`} />
       ))}
     </>
   )

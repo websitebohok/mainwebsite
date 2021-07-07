@@ -80,7 +80,7 @@ const BlogItemStyles = styled.article`
   }
 `
 
-const BlogItem = ({ index, nodeObj }) => {
+const BlogItem = ({ itemKey, nodeObj }) => {
   const {
     excerpt,
     frontmatter: { title, date, path, featuredImageAlt, featuredImage },
@@ -88,7 +88,7 @@ const BlogItem = ({ index, nodeObj }) => {
   const image = getImage(featuredImage)
 
   return (
-    <BlogItemStyles key={`blog-item-${index}`}>
+    <BlogItemStyles key={itemKey}>
       <Link to={path}>
         {title && <h2>{title}</h2>}
 

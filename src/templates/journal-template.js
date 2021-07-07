@@ -30,7 +30,7 @@ const JournalTemplate = ({ data }) => {
         officiis ducimus corrupti?
       </p>
       {allMarkdownRemark.edges.map(({ node }, index) => {
-        return <BlogItem nodeObj={node} index={index} />
+        return <BlogItem nodeObj={node} itemKey={`category-${index}`} />
       })}
     </>
   )
