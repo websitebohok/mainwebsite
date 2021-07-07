@@ -8,6 +8,8 @@ import Button from "../components/Button"
 import Banner from "../components/Banner"
 import styled from "styled-components"
 
+const _ = require("lodash")
+
 const BlogPostStyles = styled.div`
   .meta {
     h2 {
@@ -73,6 +75,7 @@ export default function Template({ data }) {
   } = data // Object destructuring
   let featuredImgFluid =
     frontmatter.featuredImage.childImageSharp.gatsbyImageData
+  const categoryCase = _.kebabCase(frontmatter.category)
 
   return (
     <>
@@ -108,19 +111,15 @@ export default function Template({ data }) {
           <Button text="Return to Journal Home" />
         </Link>
 
-        {/* If there are tags for the post, render this section */}
-        {frontmatter.tags && (
+        {/* If there are category for the post, render this section */}
+        {frontmatter.category && (
           <>
             <hr />
             <h6>
               Posted under{" "}
-              {frontmatter.tags.map((tagName, index) => {
-                return (
-                  <Link to={`/tags/${tagName}`} key={index}>
-                    {tagName}
-                  </Link>
-                )
-              })}
+              <Link to={`/journal/${categoryCase}`}>
+                {frontmatter.category}
+              </Link>
             </h6>
           </>
         )}
@@ -138,7 +137,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        tags
+        category
         description
         author
         featuredImage {
