@@ -10,34 +10,34 @@
 
 ## dev
 
-- search box
-- nav submenu
-  -- button (v)
-  -- submenu directory (v)
-  -- category paging control (v)
-  -- pagerstyle
-  -- journal nav
-  ---- style
-  -- remove nav submenu (v)
-- nav activeStyle
-- featured post in index.js
-- primary and secondary color
-- blogitem layout
-  -- flex row
-  -- image
-  -- minutes read
-  -- category
-  --
-- fix footer social icon (phone)
-- netlify cms structure
-  -- categorized collection
-- key in BlogItem.js
-  -- journal-template -> key={category-index}
-  -- category
-  -- index
-- post.js
-  -- font size
-  -- "return to journal home" --> "return to category"
-  -- "posted under {category}"
-- 404 page
-- night mode
+- [ ] search box
+- [ ] nav submenu
+  - [x] button
+  - [x] submenu directory
+  - [x] category paging control
+  - [ ] pagerstyle
+  - [ ] journal nav
+    - [ ] style
+  - [x] remove nav submenu
+- [ ] nav activeStyle
+- [ ] featured post in index.js
+- [ ] primary and secondary color
+- [ ] blogitem layout
+  - [ ] flex row
+  - [ ] image
+  - [ ] minutes read
+  - [ ] category
+- [ ] fix footer social icon (phone)
+- [ ] netlify cms structure
+  - [x] categorized collection
+  - [ ] post path autofill
+- [x] key in BlogItem.js
+  - [x] journal-template -> key={category-index}
+  - [x] category
+  - [x] index
+- [ ] post.js
+  - [ ] font size
+  - [ ] "return to journal home" --> "return to category" (?)
+  - [x] "posted under {category}"
+- [x] 404 page
+- [ ] night mode
