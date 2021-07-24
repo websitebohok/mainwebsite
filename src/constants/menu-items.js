@@ -13,11 +13,19 @@ export const mainMenuItems = [
   },
   {
     path: "/journal",
-    title: "journal",
+    title: "essay",
   },
   {
     path: "/contact",
-    title: "contact",
+    title: "photo",
+  },
+  {
+    path: "/contact",
+    title: "blog",
+  },
+  {
+    path: "/contact",
+    title: "index",
   },
 ]
 
@@ -62,11 +70,32 @@ export const socialMenuItems = [
 
 export const footerMenuItems = [
   {
+    path: "/contact",
+    title: "contact",
+  },
+  {
     path: "/privacy",
     title: "privacy",
   },
   {
     path: "/cookies",
     title: "cookies",
+  },
+]
+
+export const creditMenuItems = [
+  {
+    title: "Site by",
+    name: "sngkr",
+    url: "https://sngkr.netlify.app/",
+    logo: null,
+    logoWidth: null,
+  },
+  {
+    title: "Powered by",
+    name: "Gatsby",
+    url: "https://www.gatsbyjs.com/",
+    logo: "https://www.gatsbyjs.com/Gatsby-Logo.svg",
+    logoWidth: "72",
   },
 ]

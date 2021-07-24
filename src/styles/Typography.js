@@ -1,9 +1,13 @@
 import { createGlobalStyle } from "styled-components"
 import "@fontsource/lora"
-import "@fontsource/raleway"
+import "@fontsource/roboto"
+import "@fontsource/roboto-mono"
+import "@fontsource/dm-serif-display"
 
 const Typography = createGlobalStyle`
 h1 {
+  font-family: var(--displayFont);
+  font-weight: var(--regularWeight);
   font-size: var(--h1);
   margin: calc(var(--spacing) * 3) 0;
 }
@@ -13,14 +17,13 @@ p {
   font-size: var(--para);
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: var(--sansSerif);
-  font-weight: var(--heavyWeight);
+  font-weight: var(--boldWeight);
 }
 
 hr,
@@ -44,12 +47,12 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--charcoal);
+  color: var(--black);
 }
 
 h5,
 h6 {
-  color: var(--primaryColor);
+  color: var(--black);
   margin: var(--spacing) 0;
 }
 

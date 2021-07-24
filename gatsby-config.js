@@ -14,6 +14,7 @@ module.exports = {
     image: `/images/color.jpg`,
     author: `Alvaryan Maulana`,
     authorSite: `https://www.bohok.com`,
+    telephone: `+628123456789`,
     twitterUsername: `@bohok`,
     twitterURL: `https://twitter.com/`,
     linkedInURL: `https://www.linkedin.com/`,

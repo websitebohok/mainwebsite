@@ -3,7 +3,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 import Typography from "../styles/Typography"
-import Logo from "../content/images/kakbohok-logo.svg"
+import Logo from "../content/images/kakbohok-logo-big.svg"
 
 const Layout = ({ children }) => {
   return (
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Typography />
       <Header Logo={Logo} />
       <main className="main-body">{children}</main>
-      <Footer Logo={Logo} />
+      {/* <Footer Logo={Logo} /> */}
     </>
   )
 }

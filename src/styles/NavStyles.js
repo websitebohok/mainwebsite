@@ -2,46 +2,71 @@ import styled from "styled-components"
 
 export const HeaderStyles = styled.header`
   z-index: 3;
-  position: fixed;
+  position: sticky;
   left: 0;
-  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 682px;
   display: flex;
-  justify-content: space-between;
-  grid-template-columns: 200px auto;
-  grid-gap: 1rem;
-  padding: 0.5rem 2rem;
-  background-color: #fff;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  padding-right: 2.5rem;
+  margin: 1rem 2.5rem;
+  background-color: var(--white);
   transition: box-shadow var(--transMed) ease;
+  border-right: 1px solid rgba(124, 124, 124, 0.2);
 
-  &.scrolled {
-    box-shadow: -1px 5px 11px 0px rgba(0, 0, 0, 0.1);
+  @media (min-width: 901px) {
+    max-width: 249px;
   }
 
-  .logo-cont {
+  @media (max-width: 900px) {
+    width: 100%;
+    height: 100%;
+    border-right: none;
+    padding: 0;
+    margin: 0;
+
+    &.scrolled {
+      box-shadow: -1px 5px 11px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .head-cont {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 0 2.5rem;
+    width: 100%;
     z-index: 3;
+
+    @media (max-width: 900px) {
+      margin: 0;
+      padding: 1rem 1.5rem;
+      background-color: var(--white);
+      border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+    }
 
     a {
       display: inline-block;
-      line-height: 2.5rem;
       color: var(--black);
       text-decoration: none;
-      transition: var(--transMed);
       position: relative;
 
       &:hover {
-        color: var(--primaryColor);
+        color: var(--black);
       }
     }
 
     img {
       vertical-align: middle;
-      width: 125px;
+      width: 187px;
 
-      @media (min-width: 768px) {
-        width: 150px;
+      @media (max-width: 900px) {
+        width: 116px;
       }
     }
 
@@ -57,16 +82,19 @@ export const HeaderStyles = styled.header`
 `
 
 export const NavigationStyles = styled.nav`
-  @media (max-width: 767px) {
+  @media (max-width: 900px) {
     position: fixed;
-    top: 0;
+    overflow: auto;
+    top: 53px;
     left: 0;
     width: 100%;
     bottom: 0;
     right: 0;
-    background-color: #fff;
+    box-sizing: border-box;
+    background-color: var(--white);
+    padding: 2rem 4rem;
     z-index: 2;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: var(--transMed);
 
     &.open {
@@ -76,54 +104,70 @@ export const NavigationStyles = styled.nav`
     ul {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
   ul {
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     text-transform: capitalize;
+    margin-bottom: 2.5rem;
 
     li {
-      padding-left: 2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.85rem;
-      font-family: "Raleway";
+      font-family: var(--sansSerif);
       position: relative;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: var(--gray);
 
       a {
-        font-weight: 700;
+        width: 100%;
+        font-weight: var(--regularWeight);
+        color: var(--gray);
+
+        &:hover {
+          color: var(--black);
+          font-weight: var(--mediumWeight);
+        }
+      }
+    }
+  }
+
+  ul.mainMenu {
+    flex-flow: column nowrap;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+
+    li {
+      height: 2rem;
+      font-size: var(--para);
+      margin: 0;
+      justify-content: center;
+      align-items: center;
+
+      &:hover > a {
+        padding-left: 1rem;
       }
 
-      ul {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        // background: red;
-        transition: all 0.5s ease;
-        margin-top: 0rem;
-        list-style-type: none;
-        right: 0;
-        min-width: 6rem;
-        display: none;
+      a {
+        line-height: 2rem;
 
-        li {
-          clear: both;
-          width: 100%;
-          box-sizing: border-box;
-          padding: 0 0.5rem;
-          margin: 0;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
+        &.active {
+          color: var(--black);
+          font-weight: var(--heavyWeight);
+          text-decoration: underline;
+        }
 
-          a {
-            margin: 0.1rem 0;
-          }
+        &:hover {
+          -webkit-transition: var(--transMed);
+          transition: var(--transMed);
+          background-color: var(--black);
+          color: var(--white);
+          font-weight: var(--mediumWeight);
         }
       }
 
@@ -134,14 +178,58 @@ export const NavigationStyles = styled.nav`
         display: block;
       }
     }
+  }
 
-    @media (min-width: 768px) {
-      ul {
-        align-items: center;
-        li {
-          padding-left: 2rem;
-          justify-content: flex-end;
-        }
+  ul.socialMenu {
+    flex-flow: row nowrap;
+
+    li {
+      height: 1.375rem;
+      font-size: 1.375rem;
+      margin: 0;
+
+      a {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  ul.contactMenu,
+  ul.creditMenu {
+    flex-flow: column nowrap;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(124, 124, 124, 0.2);
+
+    li {
+      font-size: var(--subPara);
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  ul.creditMenu {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      text-transform: none;
+
+      a {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  ul.additionalMenu {
+    flex-flow: row nowrap;
+
+    li {
+      font-size: var(--subPara);
+      margin: 0;
+
+      a {
+        margin-right: 1.5rem;
       }
     }
   }
@@ -167,10 +255,10 @@ export const BurgerStyles = styled.button`
 
     span {
       display: block;
-      background-color: var(--charcoal);
-      transition: width 0.3s ease;
+      background-color: var(--gray);
+      transition: width 0.2s ease;
       width: 30px;
-      height: 1px;
+      height: 2px;
 
       &:nth-child(1) {
         transform: translateY(-8px);
@@ -196,7 +284,7 @@ export const BurgerStyles = styled.button`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 901px) {
     display: none;
   }
 `
