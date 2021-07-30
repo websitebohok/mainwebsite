@@ -18,7 +18,7 @@ const PageTemplate = ({
       <div className="page-standard">
         <Banner content={frontmatter.title} />
         <div
-          className="blog-post-content"
+          className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/SEO"
 import BlogItem from "../components/BlogItem"
-import JournalNav from "../components/JournalNav"
 import Button from "../components/Button"
 import { PagerStyles } from "../styles/JournalStyles"
 import Banner from "../components/Banner"
@@ -12,7 +11,6 @@ const JournalTemplate = ({ data }) => {
 
   return (
     <>
-      <JournalNav />
       <Seo title="Read more about the projects at Bonneville" />
       <Banner content="Jurnal Bohok" />
       <p>

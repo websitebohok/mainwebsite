@@ -6,7 +6,8 @@ date: 2019-08-26
 featuredpost: true
 path: /duis-convallis-eget
 featuredImage: ./images/trees.jpg
-category: "category 1"
+featuredImageAlt: "Trees"
+category: "essay"
 tags: ["data", "seo"]
 author: Si Ccccc
 ---

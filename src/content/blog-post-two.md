@@ -6,7 +6,8 @@ date: 2019-08-26
 featuredpost: false
 path: /morbi-elit-leo
 featuredImage: ./images/dog.jpg
-category: "category 2"
+featuredImageAlt: "Dog"
+category: "photo"
 tags: ["data"]
 author: Si Ddddd
 ---

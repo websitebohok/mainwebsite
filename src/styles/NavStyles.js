@@ -12,7 +12,8 @@ export const HeaderStyles = styled.header`
   flex-flow: column nowrap;
   justify-content: flex-start;
   padding-right: 2.5rem;
-  margin: 1rem 2.5rem;
+  margin: 1.5rem 2.5rem;
+  margin-right: 0;
   background-color: var(--white);
   transition: box-shadow var(--transMed) ease;
   border-right: 1px solid rgba(124, 124, 124, 0.2);

@@ -9,12 +9,19 @@ h1 {
   font-family: var(--displayFont);
   font-weight: var(--regularWeight);
   font-size: var(--h1);
-  margin: calc(var(--spacing) * 3) 0;
+  margin: 0 0 calc(var(--spacing) * 2);
 }
 
 p {
-  margin: calc(var(--spacing) / 2) 0 var(--spacing) 0;
+  margin: 0 0 calc(var(--spacing) * 0.75);
   font-size: var(--para);
+  font-family: var(--sansSerif);
+  line-height: 1.5;
+  color: var(--gray);
+
+  &.subPara {
+    font-size: var(--subPara);
+  }
 }
 
 h2,

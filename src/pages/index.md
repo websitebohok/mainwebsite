@@ -1,7 +1,8 @@
 ---
 templateKey: "index"
-title: Homepage
-description: Ini adalah Home Page.
+title: Website Bohok
+description: Website yang diciptakan untuk Kak bohok supaya beliau punya tempat flexing
+featuredImage: ../content/images/homepage-hero.png
 path: /
 ---
 

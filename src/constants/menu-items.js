@@ -12,36 +12,20 @@ export const mainMenuItems = [
     title: "about",
   },
   {
-    path: "/journal",
+    path: "/essay",
     title: "essay",
   },
   {
-    path: "/contact",
+    path: "/photo",
     title: "photo",
   },
   {
-    path: "/contact",
+    path: "/blog",
     title: "blog",
   },
   {
-    path: "/contact",
-    title: "index",
-  },
-]
-
-export const journalMenuItems = [
-  { path: "/journal", title: "journal" },
-  {
-    path: "/journal/category-1",
-    title: "category1",
-  },
-  {
-    path: "/journal/category-2",
-    title: "category2",
-  },
-  {
-    path: "/journal/category-3",
-    title: "category3",
+    path: "/links",
+    title: "links",
   },
 ]
 

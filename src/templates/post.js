@@ -30,8 +30,10 @@ const BlogPostStyles = styled.div`
   .blog-post-content {
     p {
       font-weight: 400;
-      font-size: 0.85rem;
-      color: var(--charcoal);
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.625;
+      color: var(--black);
     }
   }
 

@@ -11,13 +11,19 @@
 ## dev
 
 - [ ] search box
+- [ ] homepage
+  - [x] homepage template in gatsby-node.js
+  - [x] standalone styling
+  - [ ] hero image title width
+  - [ ] post roll breakpoint
+  - [ ]
 - [ ] nav submenu
   - [x] button
   - [x] submenu directory
   - [x] category paging control
   - [ ] pagerstyle
   - [ ] journal nav
-    - [ ] style
+    - [ ] style, must not hidden at phone size
   - [x] remove nav submenu
 - [ ] nav activeStyle
 - [ ] featured post in index.js
@@ -37,7 +43,8 @@
   - [x] index
 - [ ] post.js
   - [ ] font size
-  - [ ] "return to journal home" --> "return to category" (?)
+  - [ ] (delete) "return to journal home" --> "return to category" (?)
   - [x] "posted under {category}"
+- [ ] contact form
 - [x] 404 page
 - [ ] night mode

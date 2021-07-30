@@ -32,10 +32,10 @@ collections:
           widget: "boolean",
           default: false,
         }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
       - {
           label: "Featured Image Alt",
-          name: "featuredimagealt",
+          name: "featuredImageAlt",
           widget: "string",
         }
       - { label: "Body", name: "body", widget: "markdown" }

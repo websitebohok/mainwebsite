@@ -7,7 +7,7 @@ featuredpost: false
 path: /mencoba-ke-2
 featuredImage: ./images/dark-sky.jpg
 featuredImageAlt: "Dark abstract shapes"
-category: "category 1"
+category: "photo"
 tags: ["data", "CMS"]
 author: Si Bbbbb
 ---

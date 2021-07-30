@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --h6: 1.125rem;
     --footerMenuItem: 0.85rem;
     --para: 1rem;
-    --subPara: 0.875rem;
+    --subPara: 0.8rem;
     --spacing: 1rem;
   }
 
@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
     color: var(--black);
     font-size: var(--para);
     margin: 0;
+    background-color: var(--white);
   }
 
   body > div {
@@ -46,18 +47,34 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-flow: row nowrap;
     max-width: 1280px;
+    position: relative;
+    background-color: var(--white);
 
     @media (max-width: 900px) {
       flex-flow: column nowrap;
     }
   }
 
-  p {
-    font-size: var(--para);
-    line-height: 1.35;
+  .main-body {
+   box-sizing: border-box;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: flex-start;
+   margin: 1.5rem 2.5rem;
+  }
 
-    @media (min-width: 768px) {
-      line-height: 1.5;
+  .hr-img {
+    margin-bottom: 2rem;
+    // width:  100%;
+  }
+
+  .gatsby-image-wrapper {
+    // max-height: 600px;
+    // width: 100%;
+
+    img {
+      max-height: 600px;
     }
   }
 
@@ -72,10 +89,6 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       color: var(--primaryColor);
     }
-  }
-
-  .main-body {
-   
   }
 
   .btn {
@@ -131,6 +144,12 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .br-line {
+    width: 100%;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 2rem;
   }
 
   .sr-only {

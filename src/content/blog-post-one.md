@@ -7,7 +7,7 @@ featuredpost: true
 path: /etiam-congue-orci-vel
 featuredImage: ./images/dark-sky.jpg
 featuredImageAlt: "Dark abstract shapes"
-category: "category 1"
+category: "essay"
 tags: ["data", "CMS"]
 author: Si Bbbbb
 ---

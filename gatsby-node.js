@@ -35,19 +35,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     console.error(result.errors)
   }
-  result.data.allMarkdownRemark.edges
-    .filter((edge) => edge.node.frontmatter.templateKey !== "category")
-    .forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(
-          `src/templates/${String(node.frontmatter.templateKey)}.js`
-        ),
-        context: {
-          slug: node.frontmatter.path,
-        },
-      })
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve(
+        `src/templates/${String(node.frontmatter.templateKey)}.js`
+      ),
+      context: {
+        slug: node.frontmatter.path,
+        category:
+          node.frontmatter.templateKey === "category"
+            ? node.frontmatter.category
+            : null,
+      },
     })
+  })
 
   // Create blog list pages
 
@@ -79,29 +81,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  const categories = result.data.categoryGroup.group
+  // const categories = result.data.categoryGroup.group
 
-  categories.forEach((category, iCategory) => {
-    const numPosts = category.totalCount
-    const postsPerPage = 2 // Change for number posts to display per page
-    const numPages = Math.ceil(numPosts / postsPerPage)
-    Array.from({ length: numPages }).forEach((item, i) => {
-      createPage({
-        path:
-          i === 0
-            ? `/journal/${_.kebabCase(category.fieldValue)}`
-            : `/journal/${_.kebabCase(category.fieldValue)}/${i + 1}`,
-        component: categoryTemplate,
-        context: {
-          category: category.fieldValue,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
-    })
-  })
+  // categories.forEach((category, iCategory) => {
+  //   createPage({
+  //     path: `/${_.kebabCase(category.fieldValue)}`,
+  //     component: categoryTemplate,
+  //     context: {
+  //       category: category.fieldValue,
+  //     },
+  //   })
+  // })
 
   // Make Tag Pages
   // const tags = result.data.tagsGroup.group
