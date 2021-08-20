@@ -1,15 +1,13 @@
 ---
-templateKey: "post"
+templateKey: "post-template"
+category: "essay"
 title: Etiam congue orci vel
 description: Pellentesque euismod dapibus ligula, ac tempor quam dapibus a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2019-08-26
+date: 2019-06-03
 featuredpost: true
-path: /etiam-congue-orci-vel
-featuredImage: ./images/dark-sky.jpg
+featuredImage: ./../images/dark-sky.jpg
 featuredImageAlt: "Dark abstract shapes"
-category: "essay"
-tags: ["data", "CMS"]
-author: Si Bbbbb
+author: Norberto
 ---
 
 Sed eu aliquet dolor. Nullam vitae tempor tellus. Vivamus eget elementum leo. Etiam dolor erat, tincidunt ut erat et, hendrerit tincidunt dolor. Vivamus pretium luctus nisi, quis sodales diam varius ac. Etiam mattis velit in dui gravida, ut rutrum urna accumsan. Aliquam facilisis in orci eu mollis. Morbi vel nisi pulvinar mi tincidunt aliquet. Donec at dictum eros. Sed ac consectetur ex.

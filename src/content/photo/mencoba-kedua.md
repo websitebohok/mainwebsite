@@ -1,15 +1,13 @@
 ---
-templateKey: "post"
+templateKey: "post-template"
+category: "photo"
 title: mencoba ke 2
 description: Pellentesque euismod dapibus ligula, ac tempor quam dapibus a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2019-08-26
+date: 2018-05-20
 featuredpost: false
-path: /mencoba-ke-2
-featuredImage: ./images/dark-sky.jpg
+featuredImage: ./../images/dark-sky.jpg
 featuredImageAlt: "Dark abstract shapes"
-category: "photo"
-tags: ["data", "CMS"]
-author: Si Bbbbb
+author: Eleazar
 ---
 
 Odio voluptas molestias. Quos eius provident sed et sed voluptates eum assumenda eos. Voluptas et ab aliquam qui ab commodi. At veniam eius tempora aut dolore enim.

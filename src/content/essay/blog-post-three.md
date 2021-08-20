@@ -1,15 +1,13 @@
 ---
-templateKey: "post"
+templateKey: "post-template"
+category: "essay"
 title: Duis convallis eget elit eget efficitur
 description: Aliquam erat volutpat. Suspendisse potenti. Aenean eget tellus neque
 date: 2019-08-26
-featuredpost: true
-path: /duis-convallis-eget
-featuredImage: ./images/trees.jpg
+featuredpost: false
+featuredImage: ./../images/trees.jpg
 featuredImageAlt: "Trees"
-category: "essay"
-tags: ["data", "seo"]
-author: Si Ccccc
+author: Georgette
 ---
 
 Quisque sit amet mi sapien. Aenean at magna vel turpis fringilla lacinia. Sed vulputate neque vitae augue posuere tempor. Praesent ut sagittis ipsum. Nulla volutpat at augue a vulputate. Etiam molestie est vel pretium imperdiet. Duis a sem tristique, dapibus sapien a, rutrum dui. Nunc non lectus quis urna iaculis feugiat in eu orci. Vestibulum pretium luctus justo, non convallis ante dignissim vel. Nam tristique ante vitae vehicula tincidunt. Proin vel nibh eu nunc porta laoreet at a velit. Proin blandit tincidunt eros nec placerat.
