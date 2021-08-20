@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --transMed: 0.1s;
     --transSlow: 0.3s;
     --black: #2B2B2B;
-    --gray: #7C7C7C;
+    --gray: #757575;
     --white: #FFFDFD;
     --blue: #3457D5;
     --lightblue: #D4DCFF;
@@ -24,6 +24,8 @@ const GlobalStyles = createGlobalStyle`
     --h5: 1.25rem;
     --h6: 1.125rem;
     --footerMenuItem: 0.85rem;
+    --xlPara: 1.25rem;
+    --lPara: 1.125rem;
     --para: 1rem;
     --subPara: 0.8rem;
     --spacing: 1rem;
@@ -41,12 +43,14 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    // padding: 0 5%;
   }
 
   #gatsby-focus-wrapper {
     display: flex;
     flex-flow: row nowrap;
     max-width: 1280px;
+    width: 100%;
     position: relative;
     background-color: var(--white);
 
@@ -62,6 +66,12 @@ const GlobalStyles = createGlobalStyle`
    justify-content: flex-start;
    align-items: flex-start;
    margin: 1.5rem 2.5rem;
+   width: calc(100% - 2 * 2.5rem);
+
+   @media (max-width: 375px) {
+     margin: 1.5rem 1.5rem;
+     width: calc(100% - 2 * 1.5rem);
+   }
   }
 
   .hr-img {
@@ -69,9 +79,8 @@ const GlobalStyles = createGlobalStyle`
     // width:  100%;
   }
 
+  // featuredImage
   .gatsby-image-wrapper {
-    // max-height: 600px;
-    // width: 100%;
 
     img {
       max-height: 600px;
@@ -79,17 +88,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: var(--charcoal);
-    text-decoration: none;
+    // color: var(--gray);
+    text-decoration: underline;
 
     &:hover {
       text-decoration: none;
     }
 
     &:hover {
-      color: var(--primaryColor);
+      color: var(--black);
     }
   }
+
+
 
   .btn {
     color: var(--black);
@@ -107,7 +118,7 @@ const GlobalStyles = createGlobalStyle`
       border: none;
       background-color: transparent;
       font-size: var(--h6);
-      padding: 0;
+      padding: 1rem 1.25rem;
       display: flex;
       font-family: var(--serif);
       color: var(--charcoal);
@@ -149,7 +160,8 @@ const GlobalStyles = createGlobalStyle`
   .br-line {
     width: 100%;
     border-bottom: 2px solid var(--black);
-    margin-bottom: 2rem;
+    opacity: 0.2;
+    margin: 2rem 0;
   }
 
   .sr-only {

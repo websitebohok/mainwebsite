@@ -52,7 +52,7 @@ export const HeaderStyles = styled.header`
     }
 
     a {
-      display: inline-block;
+      display: flex;
       color: var(--black);
       text-decoration: none;
       position: relative;
@@ -64,7 +64,7 @@ export const HeaderStyles = styled.header`
 
     img {
       vertical-align: middle;
-      width: 187px;
+      width: 150px;
 
       @media (max-width: 900px) {
         width: 116px;
@@ -86,7 +86,7 @@ export const NavigationStyles = styled.nav`
   @media (max-width: 900px) {
     position: fixed;
     overflow: auto;
-    top: 53px;
+    top: 49px;
     left: 0;
     width: 100%;
     bottom: 0;
@@ -129,6 +129,7 @@ export const NavigationStyles = styled.nav`
         width: 100%;
         font-weight: var(--regularWeight);
         color: var(--gray);
+        text-decoration: none;
 
         &:hover {
           color: var(--black);
@@ -188,9 +189,10 @@ export const NavigationStyles = styled.nav`
       height: 1.375rem;
       font-size: 1.375rem;
       margin: 0;
+      margin-right: 1.5rem;
 
-      a {
-        margin-right: 1.5rem;
+      &:last-child {
+        margin: 0;
       }
     }
   }
@@ -204,6 +206,10 @@ export const NavigationStyles = styled.nav`
     li {
       font-size: var(--subPara);
       margin: 0 0 0.5rem;
+
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 
@@ -228,9 +234,10 @@ export const NavigationStyles = styled.nav`
     li {
       font-size: var(--subPara);
       margin: 0;
+      margin-right: 1.5rem;
 
-      a {
-        margin-right: 1.5rem;
+      &:last-child {
+        margin: 0;
       }
     }
   }
