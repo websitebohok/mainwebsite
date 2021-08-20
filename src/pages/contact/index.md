@@ -1,8 +1,7 @@
 ---
-templateKey: "contact"
+templateKey: "contact-template"
 title: Contact Page
 description: Ini adalah Contact Page.
-path: /contact
 ---
 
 Suscipit sit magnam enim corrupti sint et. Qui beatae at et fugit qui et accusantium. Animi molestiae dignissimos ipsam omnis aperiam qui aliquid. Inventore consequatur nobis iste omnis exercitationem aliquam voluptas beatae. Sit quisquam iste perferendis ad maxime. Sint harum maxime impedit quam.
