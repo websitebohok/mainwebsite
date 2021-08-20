@@ -37,6 +37,7 @@ const Navigation = ({ author, authorSite, telephone }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon"
+                  aria-label={`Author's ${item.name}`}
                 >
                   {item.icon}
                 </a>
@@ -48,7 +49,12 @@ const Navigation = ({ author, authorSite, telephone }) => {
       <ul className="contactMenu">
         <li>Jakarta, Indonesia</li>
         <li>
-          <a className="telephone" href={`tel:${telephone}`}>
+          <a
+            className="telephone"
+            href={`tel:${telephone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {telephone}
           </a>
         </li>
@@ -74,7 +80,12 @@ const Navigation = ({ author, authorSite, telephone }) => {
           {creditMenuItems.map((item, index) => (
             <li key={`creditMenu${index}`}>
               {item.title}&nbsp;
-              <a href={item.url}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.name}
+              >
                 {item.logo ? (
                   <img src={item.logo} alt={item.name} width={item.logoWidth} />
                 ) : (

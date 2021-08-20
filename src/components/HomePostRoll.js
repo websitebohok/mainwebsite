@@ -3,8 +3,10 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
+const _ = require("lodash")
+
 const PostsItemStyle = styled.article`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -31,9 +33,15 @@ const PostsItemStyle = styled.article`
     margin-bottom: 0.25rem;
   }
 
-  p.date {
+  .meta {
+    display: flex;
+    flex-flow: row nowrap;
     // text-align: right;
-    color: var(--black);
+    color: var(--gray);
+
+    .bullet {
+      padding: 0 0.5rem;
+    }
   }
 
   a {
@@ -41,29 +49,50 @@ const PostsItemStyle = styled.article`
   }
 `
 
-const HomePostRoll = ({ itemKey, nodeObj }) => {
+const HomePostRoll = ({ nodeObj }) => {
   const {
-    frontmatter: { title, description, date, path, category },
+    fields: { slug },
+    frontmatter: { title, description, date, path, category, webname },
+    timeToRead,
   } = nodeObj
 
   return (
-    <PostsItemStyle key={itemKey}>
-      <Link to={path}>
-        {category && <p className="hp-category">{category}</p>}
-        {title && <h5>{title}</h5>}
-        {description && <p>{description}</p>}
-        <p className="subPara date">{date}</p>
-      </Link>
+    <PostsItemStyle>
+      {category === "links" ? (
+        <a href={path} target="_blank" rel="noopener noreferrer">
+          {category && <p className="hp-category">{category}</p>}
+          {title && <h5>{title}</h5>}
+          {description && <p>{description}</p>}
+          <div className="meta">
+            {date && <p className="subPara">{date}</p>}
+            <p className="subPara bullet">•</p>
+            {timeToRead && <p className="subPara">{_.capitalize(webname)}</p>}
+          </div>
+        </a>
+      ) : (
+        <Link to={slug}>
+          {category && <p className="hp-category">{category}</p>}
+          {title && <h5>{title}</h5>}
+          {description && <p>{description}</p>}
+          <div className="meta">
+            {date && <p className="subPara">{date}</p>}
+            <p className="subPara bullet">•</p>
+            {timeToRead && <p className="subPara">{timeToRead} min read</p>}
+          </div>
+        </Link>
+      )}
     </PostsItemStyle>
   )
 }
 
 HomePostRoll.propTypes = {
-  alt: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   path: PropTypes.string,
+  slug: PropTypes.string,
   date: PropTypes.string,
+  category: PropTypes.string,
+  webname: PropTypes.string,
 }
 
 export default HomePostRoll

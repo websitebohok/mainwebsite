@@ -4,15 +4,30 @@ import ShareIcon from "./ShareIcon"
 import styled from "styled-components"
 
 const ShareArea = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+
   svg {
-    width: 30px;
-    height: 30px;
-    margin-right: var(--spacing);
+    fill: var(--gray);
+    width: 20px;
+    height: 20px;
   }
 
   a {
+    margin-left: var(--spacing);
+    display: flex;
+
+    &:first-child {
+      margin: 0;
+    }
+
     &:after {
       display: none;
+    }
+
+    &:hover > svg,
+    svg:hover {
+      fill: var(--black);
     }
   }
 `
@@ -20,15 +35,18 @@ const ShareArea = styled.div`
 const ShareCont = ({ facebook, twitter, linkedin, href }) => {
   return (
     <ShareArea>
-      <h4>Share This</h4>
       {twitter && (
-        <ShareIcon shareUrl={`https://twitter.com/intent/tweet?url=${href}`}>
+        <ShareIcon
+          shareUrl={`https://twitter.com/intent/tweet?url=${href}`}
+          label="Twitter"
+        >
           <FaTwitter />
         </ShareIcon>
       )}
       {facebook && (
         <ShareIcon
           shareUrl={`https://www.facebook.com/sharer.php?u=${href}%2F`}
+          label="Facebook"
         >
           <FaFacebook />
         </ShareIcon>
@@ -36,6 +54,7 @@ const ShareCont = ({ facebook, twitter, linkedin, href }) => {
       {linkedin && (
         <ShareIcon
           shareUrl={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
+          label="LinkedIn"
         >
           <FaLinkedin />
         </ShareIcon>

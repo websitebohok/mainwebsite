@@ -1,11 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
 
-const ShareIcon = ({ shareUrl, children }) => {
+const ShareIcon = ({ shareUrl, children, label }) => {
   return (
-    <Link to={shareUrl} target="_blank" rel="noopenner noreferrer">
+    <a
+      href={shareUrl}
+      target="_blank"
+      rel="noopenner noreferrer"
+      aria-label={`Share on ${label}`}
+    >
       {children}
-    </Link>
+    </a>
   )
 }
 

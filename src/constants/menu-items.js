@@ -1,6 +1,7 @@
 import React from "react"
 import { DiGithubBadge } from "react-icons/di"
 import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa"
+import gatsbyLogo from "../images/Gatsby-Logo.svg"
 
 export const mainMenuItems = [
   {
@@ -79,7 +80,7 @@ export const creditMenuItems = [
     title: "Powered by",
     name: "Gatsby",
     url: "https://www.gatsbyjs.com/",
-    logo: "https://www.gatsbyjs.com/Gatsby-Logo.svg",
+    logo: gatsbyLogo,
     logoWidth: "72",
   },
 ]

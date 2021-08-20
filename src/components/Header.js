@@ -31,7 +31,7 @@ const Header = ({ Logo }) => {
   return (
     <HeaderStyles className={scroll ? "scrolled" : null}>
       <div className="head-cont">
-        <Link to="/">
+        <Link to="/" aria-label="Homepage">
           <img src={Logo} alt={data.site.siteMetadata.title} />
         </Link>
         <Burger />

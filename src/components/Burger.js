@@ -14,6 +14,7 @@ const Burger = () => {
       onClick={toggleNav}
       type="button"
       className={isOpen ? "open" : "closed"}
+      aria-label="Menu button"
     >
       <div>
         <span></span>

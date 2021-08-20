@@ -3,31 +3,22 @@ import styled from "styled-components"
 
 const ButtonWrapper = styled.button`
   border: none;
-  background-color: transparent;
-  font-size: var(--h5);
-  padding: 0;
+  border-radius: 10px;
+  background-color: var(--blue);
+  font-size: var(--h6);
+  padding: 1rem 1.25rem;
   display: flex;
-  font-family: var(--serif);
-  color: var(--charcoal);
+  font-family: var(--sansSerif);
+  font-weight: var(--mediumWeight);
+  color: var(--white);
   text-decoration: none;
   position: relative;
 
-  // &:after {
-  //   content: "";
-  //   display: block;
-  //   position: absolute;
-  //   height: 0.1rem;
-  //   width: 100%;
-  //   background-color: var(--charcoal);
-  //   left: 0;
-  //   bottom: -0.25rem;
-  //   opacity: 1;
-  //   transition: opacity var(--transMed);
-  // }
-
   &:hover,
   &:focus {
-    color: var(--primaryColor);
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
     cursor: pointer;
 
     &:after {
