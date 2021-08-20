@@ -1,51 +1,19 @@
 backend:
   name: git-gateway
   branch: master
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 local_backend: true
 
 media_folder: static/img
-public_folder: /images
+public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/content"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "post",
-        }
-      - { label: "Path", name: "path", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Featured Post",
-          name: "featuredpost",
-          widget: "boolean",
-          default: false,
-        }
-      - { label: "Featured Image", name: "featuredImage", widget: image }
-      - {
-          label: "Featured Image Alt",
-          name: "featuredImageAlt",
-          widget: "string",
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - {
-          label: "Category",
-          name: "category",
-          widget: "select",
-          options: ["category 1", "category 2", "category 3"],
-        }
-      - { label: "Author", name: "author", widget: "string" }
   - name: "pages"
     label: "Pages"
     create: false
@@ -58,11 +26,16 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "index",
+              default: "index-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - { label: "Path", name: "path", widget: "hidden", default: "/" }
+          - { label: "Featured Image", name: "featuredImage", widget: image }
+          - {
+              label: "Featured Image Alt",
+              name: "featuredImageAlt",
+              widget: "string",
+            }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/about/index.md"
         label: "About Page"
@@ -74,9 +47,14 @@ collections:
               widget: "hidden",
               default: "page-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - { label: "Path", name: "path", widget: "hidden", default: "/about" }
+          - { label: "Featured Image", name: "featuredImage", widget: image }
+          - {
+              label: "Featured Image Alt",
+              name: "featuredImageAlt",
+              widget: "string",
+            }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/contact/index.md"
         label: "Contact Page"
@@ -88,14 +66,8 @@ collections:
               widget: "hidden",
               default: "page-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/contact",
-            }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/cookies/index.md"
         label: "Cookies Page"
@@ -107,14 +79,8 @@ collections:
               widget: "hidden",
               default: "page-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/cookies",
-            }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/privacy/index.md"
         label: "Privacy Page"
@@ -126,110 +92,225 @@ collections:
               widget: "hidden",
               default: "page-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/pivacy",
-            }
           - { label: "Body", name: "body", widget: "markdown" }
-  - name: "journal"
-    label: "Journal"
+  - name: "categories"
+    label: "Categories"
     create: false
     files:
-      - file: "src/pages/journal/index.md"
-        label: "Journal Page"
-        name: "journal"
+      - file: "src/pages/categories/essay.md"
+        label: "Essay"
+        name: "essay"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "journal-template",
+              default: "category-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/journal",
-            }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/categories/category1.md"
-        label: "Category 1 Page"
-        name: "category-1"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "category",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
           - {
               label: "Category",
               name: "category",
               widget: "hidden",
-              default: "category 1",
+              default: "essay",
             }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/journal/category-1",
-            }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/categories/category2.md"
-        label: "Category 2 Page"
-        name: "category-2"
+      - file: "src/pages/categories/photo.md"
+        label: "Photo"
+        name: "photo"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "category",
+              default: "category-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
           - {
               label: "Category",
               name: "category",
               widget: "hidden",
-              default: "category 2",
+              default: "photo",
             }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/journal/category-2",
-            }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/categories/category3.md"
-        label: "Category 3 Page"
-        name: "category-3"
+      - file: "src/pages/categories/blog.md"
+        label: "Blog"
+        name: "blog"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "category",
+              default: "category-template",
             }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
           - {
               label: "Category",
               name: "category",
               widget: "hidden",
-              default: "category 3",
+              default: "blog",
+            }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/categories/links.md"
+        label: "Links"
+        name: "links"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "category-template",
             }
           - {
-              label: "Path",
-              name: "path",
+              label: "Category",
+              name: "category",
               widget: "hidden",
-              default: "/journal/category-3",
+              default: "links",
             }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+  - name: "essay"
+    label: "Essay"
+    folder: "src/content/essay"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post-template",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "hidden",
+          default: "essay",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - {
+          label: "Featured Image Title",
+          name: "featuredImageAlt",
+          widget: "string",
+        }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "photo"
+    label: "Photo"
+    folder: "src/content/photo"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post-template",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "hidden",
+          default: "photo",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - {
+          label: "Featured Image Title",
+          name: "featuredImageAlt",
+          widget: "string",
+        }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post-template",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "hidden",
+          default: "blog",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - {
+          label: "Featured Image Title",
+          name: "featuredImageAlt",
+          widget: "string",
+        }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "links"
+    label: "Links"
+    folder: "src/content/links"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "post-template",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "hidden",
+          default: "links",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Post",
+          name: "featuredpost",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Website Name", name: "webname", widget: "string" }
+      - { label: "Website Link", name: "path", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }

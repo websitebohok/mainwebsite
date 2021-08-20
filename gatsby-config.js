@@ -21,8 +21,6 @@ module.exports = {
     githubURL: `https://github.com/`,
   },
   plugins: [
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -48,20 +46,14 @@ module.exports = {
         head: false,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 600,
-            },
-          },
-        ],
+        name: `uploads`,
+        path: `${__dirname}/static/img/`,
       },
     },
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -83,5 +75,22 @@ module.exports = {
         path: `${__dirname}/src/content/images`,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1280,
+              showCaptions: true,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-netlify`,
   ],
 }
