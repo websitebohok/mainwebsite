@@ -1,9 +1,10 @@
 {
-  "name": "bonneville",
+  "name": "bohok",
   "private": true,
-  "description": "A starter blog template for use with GatsbyJS",
-  "version": "1.2.0",
+  "description": "Arsip katarsis Bohok",
+  "version": "2.0",
   "license": "MIT",
+  "contributors": [{"name": "Sangkara Nararya Astabidasa", "email": "sangkaranararya@gmail.com", "url": "https://sngkr.netlify.app/"}, {"name": "Alvaryan Maulana", "email": "kakbohok@gmail.com", "url": "https://kakbohok.netlify.app/"}],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -46,12 +47,5 @@
   },
   "devDependencies": {
     "prettier": "^2.3.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bagseye/bonneville"
-  },
-  "bugs": {
-    "url": "https://github.com/bagseye/bonneville/issues"
   }
 }
