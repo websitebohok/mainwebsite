@@ -1,66 +1,61 @@
 import React from "react"
-import { DiGithubBadge } from "react-icons/di"
-import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { FaInstagram, FaMedium } from "react-icons/fa"
+import { SiGmail } from "react-icons/si"
 import gatsbyLogo from "../images/Gatsby-Logo.svg"
 
 export const mainMenuItems = [
   {
     path: "/",
-    title: "home",
+    title: "beranda",
   },
   {
-    path: "/about",
-    title: "about",
+    path: "/tentang-kami",
+    title: "tentang kami",
   },
   {
-    path: "/essay",
-    title: "essay",
+    path: "/esai",
+    title: "esai",
   },
   {
-    path: "/photo",
-    title: "photo",
+    path: "/foto",
+    title: "foto",
   },
   {
     path: "/blog",
     title: "blog",
   },
   {
-    path: "/links",
-    title: "links",
+    path: "/pranala",
+    title: "pranala",
   },
 ]
 
 export const socialMenuItems = [
-  {
-    icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/",
-    name: "LinkedIn",
-  },
   {
     icon: <FaInstagram />,
     url: "https://www.instagram.com/bohok",
     name: "Instagram",
   },
   {
-    icon: <FaTwitter />,
-    url: "https://www.twitter.com/bohok",
-    name: "Twitter",
+    icon: <FaMedium />,
+    url: "https://alvaryanm.medium.com/",
+    name: "Medium",
   },
   {
-    icon: <DiGithubBadge />,
-    url: "https://github.com/",
-    name: "GitHub",
+    icon: <SiGmail />,
+    url: "mailto:kakbohok@gmail.com",
+    name: "Gmail",
   },
 ]
 
 export const footerMenuItems = [
   {
-    path: "/contact",
-    title: "contact",
+    path: "/kontak",
+    title: "kontak",
   },
   {
-    path: "/privacy",
-    title: "privacy",
+    path: "/privasi",
+    title: "privasi",
   },
   {
     path: "/cookies",
@@ -70,14 +65,14 @@ export const footerMenuItems = [
 
 export const creditMenuItems = [
   {
-    title: "Site by",
+    title: "Situs oleh",
     name: "sngkr",
     url: "https://sngkr.netlify.app/",
     logo: null,
     logoWidth: null,
   },
   {
-    title: "Powered by",
+    title: "Didukung oleh",
     name: "Gatsby",
     url: "https://www.gatsbyjs.com/",
     logo: gatsbyLogo,
