@@ -194,6 +194,10 @@ export const NavigationStyles = styled.nav`
       &:last-child {
         margin: 0;
       }
+
+      a.social-icon {
+        height: 100%;
+      }
     }
   }
 
@@ -247,33 +251,30 @@ export const BurgerStyles = styled.button`
   border: none;
   background-color: transparent;
   font-family: var(--sansSerif);
-  color: var(--charcoal);
+  color: var(--black);
   display: flex;
   align-items: center;
   padding: 0;
   z-index: 3;
   font-size: 1.15rem;
 
-  &:focus {
-    outline: none;
-  }
-
   > div {
-    margin-left: 8px;
-
     span {
       display: block;
       background-color: var(--gray);
       transition: width 0.2s ease;
       width: 30px;
-      height: 2px;
+      height: 3px;
+      border-radius: 2px;
 
       &:nth-child(1) {
-        transform: translateY(-8px);
+        transform: translateY(0px);
+        margin-bottom: 6px;
       }
 
       &:nth-child(3) {
-        transform: translateY(8px);
+        transform: translateY(0px);
+        margin-top: 6px;
       }
     }
   }

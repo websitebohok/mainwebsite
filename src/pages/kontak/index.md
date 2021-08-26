@@ -1,9 +1,9 @@
 ---
-templateKey: "page-template"
+templateKey: "contact-template"
 SEO:
-  SEOtitle: Cookies
+  SEOtitle: Hubungi Bohok!
   SEOdescription: ""
-title: Cookies
+title: Hubungi Bohok!
 ---
 
 Suscipit sit magnam enim corrupti sint et. Qui beatae at et fugit qui et accusantium. Animi molestiae dignissimos ipsam omnis aperiam qui aliquid. Inventore consequatur nobis iste omnis exercitationem aliquam voluptas beatae. Sit quisquam iste perferendis ad maxime. Sint harum maxime impedit quam.
