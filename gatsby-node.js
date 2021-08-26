@@ -33,7 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     (edge) =>
       !(
         edge.node.frontmatter.templateKey === "post-template" &&
-        edge.node.frontmatter.category === "links"
+        edge.node.frontmatter.category === "pranala"
       )
   )
   pages.forEach(({ node }) => {
@@ -50,9 +50,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node.frontmatter.templateKey === "category-template"
             ? node.frontmatter.category
             : null,
-        isLinks:
+        isPranala:
           node.frontmatter.templateKey === "category-template"
-            ? node.frontmatter.category === "links"
+            ? node.frontmatter.category === "pranala"
               ? true
               : false
             : null,
