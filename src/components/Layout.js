@@ -2,7 +2,7 @@ import React from "react"
 import Header from "./Header"
 import GlobalStyles from "../styles/GlobalStyles"
 import Typography from "../styles/Typography"
-import Logo from "../content/images/kakbohok-logo-big.svg"
+import Logo from "../images/logo-bohok.svg"
 
 const Layout = ({ children }) => {
   return (

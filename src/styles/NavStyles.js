@@ -64,7 +64,7 @@ export const HeaderStyles = styled.header`
 
     img {
       vertical-align: middle;
-      width: 150px;
+      width: 120px;
 
       @media (max-width: 900px) {
         width: 116px;

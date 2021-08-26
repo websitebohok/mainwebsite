@@ -13,7 +13,7 @@ const Header = ({ Logo }) => {
             title
             author
             authorSite
-            telephone
+            email
           }
         }
       }
@@ -39,7 +39,7 @@ const Header = ({ Logo }) => {
       <Navigation
         author={data.site.siteMetadata.author}
         authorSite={data.site.siteMetadata.authorSite}
-        telephone={data.site.siteMetadata.telephone}
+        email={data.site.siteMetadata.email}
       />
     </HeaderStyles>
   )

@@ -36,11 +36,23 @@ p {
 
 h2,
 h3,
-h4,
+h4, 
+h5,
+h6
+ {
+  font-family: var(--sansSerif);
+  font-weight: var(--heavyWeight);
+}
+
+h2,
+h3,
+h4 {
+  letter-spacing: -1.5px;
+}
+
 h5,
 h6 {
-  font-family: var(--sansSerif);
-  font-weight: var(--boldWeight);
+  letter-spacing: -1px;
 }
 
 blockquote,
