@@ -4,7 +4,18 @@
   "description": "Arsip katarsis Bohok",
   "version": "2.0",
   "license": "MIT",
-  "contributors": [{"name": "Sangkara Nararya Astabidasa", "email": "sangkaranararya@gmail.com", "url": "https://sngkr.netlify.app/"}, {"name": "Alvaryan Maulana", "email": "kakbohok@gmail.com", "url": "https://kakbohok.netlify.app/"}],
+  "contributors": [
+    {
+      "name": "Sangkara Nararya Astabidasa",
+      "email": "sangkaranararya@gmail.com",
+      "url": "https://sngkr.netlify.app/"
+    },
+    {
+      "name": "Alvaryan Maulana",
+      "email": "kakbohok@gmail.com",
+      "url": "https://kakbohok.netlify.app/"
+    }
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -27,6 +38,7 @@
     "gatsby-plugin-netlify-cms": "^5.11.0",
     "gatsby-plugin-offline": "^4.11.0",
     "gatsby-plugin-react-helmet": "^4.11.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-sitemap": "3.3.0",
     "gatsby-plugin-styled-components": "^4.11.0",
