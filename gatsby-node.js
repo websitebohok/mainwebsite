@@ -47,7 +47,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: node.fields.slug,
         category:
-          node.frontmatter.templateKey === "category-template"
+          node.frontmatter.templateKey === "category-template" ||
+          node.frontmatter.templateKey === "post-template"
             ? node.frontmatter.category
             : null,
         isPranala:
