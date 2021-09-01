@@ -12,8 +12,9 @@ const Header = ({ Logo }) => {
           siteMetadata {
             title
             author
-            authorSite
+            address
             email
+            authorSite
           }
         }
       }
@@ -24,21 +25,24 @@ const Header = ({ Logo }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 50)
+      setScroll(window.scrollY > 23)
     })
+    return () => setScroll(false)
   }, [])
 
   return (
     <HeaderStyles className={scroll ? "scrolled" : null}>
       <div className="head-cont">
         <Link to="/" aria-label="Homepage">
-          <img src={Logo} alt={data.site.siteMetadata.title} />
+          {/* <img src={Logo} alt={data.site.siteMetadata.title} /> */}
+          <Logo />
         </Link>
         <Burger />
       </div>
       <Navigation
         author={data.site.siteMetadata.author}
         authorSite={data.site.siteMetadata.authorSite}
+        address={data.site.siteMetadata.address}
         email={data.site.siteMetadata.email}
       />
     </HeaderStyles>
