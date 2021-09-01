@@ -5,18 +5,18 @@ import styled from "styled-components"
 const BlogGroupStyle = styled.div`
   width: 100%;
 
-  .post-list {
+  div.post-list {
     display: flex;
     flex-flow: column nowrap;
     margin-bottom: 2rem;
 
-    .list-ttl {
+    div.list-ttl {
       margin-bottom: 1rem;
       display: flex;
       border-left: 4px solid var(--black);
       // border-bottom: 2px solid var(--black);
 
-      h6 {
+      h5 {
         width: auto;
         padding: 0.5rem 1rem 0.5rem 0.5rem;
         margin: 0;
@@ -31,6 +31,10 @@ const BlogGroupStyle = styled.div`
         border-bottom: 3px solid var(--black);
       }
     }
+
+    div.list-items {
+      padding-left: 12px;
+    }
   }
 `
 
@@ -42,18 +46,18 @@ const BlogGroup = ({ group, category }) => {
           return (
             <div className="post-list" key={`${category}-${index}`}>
               <div className="list-ttl">
-                {/* <div className="st-line"></div> */}
-                <h6>{fieldValue}</h6>
-                {/* <div className="st-line"></div> */}
+                <h5>{fieldValue}</h5>
               </div>
-              {edges.map(({ node }, index) => {
-                return (
-                  <BlogItem
-                    nodeObj={node}
-                    key={`${category}-${fieldValue}-${index}`}
-                  />
-                )
-              })}
+              <div className="list-items">
+                {edges.map(({ node }, index) => {
+                  return (
+                    <BlogItem
+                      nodeObj={node}
+                      key={`${category}-${fieldValue}-${index}`}
+                    />
+                  )
+                })}
+              </div>
             </div>
           )
         })
