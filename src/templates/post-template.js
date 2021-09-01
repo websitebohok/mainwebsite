@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Seo from "../components/SEO"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PostHeading from "../components/PostHeading"
+import HomePostRoll from "../components/HomePostRoll"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
@@ -35,6 +36,26 @@ const BlogPostStyles = styled.div`
       text-decoration: none;
     }
   }
+
+  div.post-roll {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+
+    article {
+      flex: 1 0 45%;
+
+      @media (max-width: 600px) {
+        flex: 1 0 100%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 `
 
 const Post = ({
@@ -48,6 +69,7 @@ const Post = ({
   image,
   imageAlt,
   location,
+  similarPost,
 }) => {
   const categoryCase = _.kebabCase(category)
 
@@ -81,13 +103,17 @@ const Post = ({
         )}
         <div className="br-line" />
         {category && (
-          <>
-            <p>
-              Posted under{" "}
-              <Link to={`/${categoryCase}`}>{_.capitalize(category)}</Link>
-            </p>
-          </>
+          <p>
+            Artikel lainnya dalam kategori{" "}
+            <Link to={`/${categoryCase}`}>{_.capitalize(category)}</Link>
+          </p>
         )}
+        <div className="post-roll">
+          {similarPost &&
+            similarPost.map(({ node }, index) => (
+              <HomePostRoll nodeObj={node} key={`similar-post-${index}`} />
+            ))}
+        </div>
       </BlogPostStyles>
     </>
   )
@@ -104,10 +130,12 @@ Post.propTypes = {
   image: PropTypes.object,
   imageAlt: PropTypes.string,
   location: PropTypes.object.isRequired,
+  similarPost: PropTypes.array,
 }
 
 const PostTemplate = ({ data }) => {
   const {
+    allMarkdownRemark: { edges },
     markdownRemark: { timeToRead, frontmatter, html },
   } = data // Object destructuring
 
@@ -125,6 +153,7 @@ const PostTemplate = ({ data }) => {
       image={frontmatter.featuredImage}
       imageAlt={frontmatter.featuredImageAlt}
       location={location}
+      similarPost={edges}
     />
   )
 }
@@ -136,7 +165,7 @@ PostTemplate.propTypes = {
 export default PostTemplate
 
 export const pageQuery = graphql`
-  query PostTemplate($slug: String!) {
+  query PostTemplate($slug: String!, $category: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
@@ -157,6 +186,31 @@ export const pageQuery = graphql`
           }
         }
         featuredImageAlt
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "post-template" }
+          category: { in: [$category] }
+        }
+        fields: { slug: { ne: $slug } }
+      }
+      limit: 10
+    ) {
+      edges {
+        node {
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            date(formatString: "MMM DD, YYYY")
+          }
+        }
       }
     }
   }

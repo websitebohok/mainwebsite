@@ -46,7 +46,7 @@ const FormTextArea = styled.textarea`
   border: 1px solid rgba(0, 0, 0, 0.25);
 `
 
-const Contact = ({ html, title, description }) => {
+const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
   const [form, setForm] = useState([])
 
   const encode = (data) => {
@@ -77,7 +77,7 @@ const Contact = ({ html, title, description }) => {
 
   return (
     <>
-      <Seo title={title} description={description} />
+      <Seo title={SEOtitle} description={SEOdescription} />
       <Banner content={title} />
       {html && (
         <div
@@ -138,21 +138,23 @@ const Contact = ({ html, title, description }) => {
 }
 
 Contact.propTypes = {
+  SEOtitle: PropTypes.string,
+  SEOdescription: PropTypes.string,
   html: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
 }
 
 const ContactTemplate = ({ data }) => {
   const {
-    markdownRemark: { html, frontmatter },
+    markdownRemark: { excerpt, html, frontmatter },
   } = data
 
   return (
     <Contact
+      SEOtitle={frontmatter.SEO.SEOtitle}
+      SEOdescription={frontmatter.SEO.SEOdescription || excerpt}
       html={html}
       title={frontmatter.title}
-      description={frontmatter.description}
     />
   )
 }
@@ -167,9 +169,13 @@ export const pageQuery = graphql`
   query ContactPage($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(pruneLength: 160)
       frontmatter {
+        SEO {
+          SEOtitle
+          SEOdescription
+        }
         title
-        description
       }
     }
   }

@@ -5,13 +5,18 @@ import Seo from "../components/SEO"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
 
-const Page = ({ image, imageAlt, title, description, html }) => {
+const Page = ({ image, imageAlt, SEOtitle, SEOdescription, title, html }) => {
   const firstImg = getImage(image)
   const SEOimage = image ? image.childImageSharp.resize : null
 
   return (
     <>
-      <Seo title={title} description={description} image={SEOimage} article />
+      <Seo
+        title={SEOtitle}
+        description={SEOdescription}
+        image={SEOimage}
+        article
+      />
       <div className="page-standard">
         <Banner content={title} />
         {image && (
@@ -33,8 +38,9 @@ const Page = ({ image, imageAlt, title, description, html }) => {
 Page.propTypes = {
   image: PropTypes.object,
   imageAlt: PropTypes.string,
+  SEOtitle: PropTypes.string,
+  SEOdescription: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   html: PropTypes.string.isRequired,
 }
 
@@ -47,8 +53,9 @@ const PageTemplate = ({ data }) => {
     <Page
       image={frontmatter.featuredImage}
       imageAlt={frontmatter.featuredImageAlt}
+      SEOtitle={frontmatter.SEO.SEOtitle}
+      SEOdescription={frontmatter.SEO.SEOdescription || excerpt}
       title={frontmatter.title}
-      description={excerpt || frontmatter.description}
       html={html}
     />
   )
@@ -66,8 +73,11 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 160)
       frontmatter {
+        SEO {
+          SEOtitle
+          SEOdescription
+        }
         title
-        description
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED)

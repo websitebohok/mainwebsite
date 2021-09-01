@@ -13,7 +13,7 @@ const HomepageStyle = styled.div`
 
   .hr-img {
     // overflow: hidden;
-    min-height: 300px;
+    // min-height: 300px;
 
     img {
       min-height: 466px;
@@ -47,9 +47,44 @@ const HomepageStyle = styled.div`
         margin: 0;
       }
 
+      h1 {
+        line-height: 3rem;
+      }
+
       p {
         margin-left: 0.25rem;
       }
+    }
+  }
+
+  .hr-txt {
+    padding: 5rem 0;
+
+    h1 {
+      font-size: 6.5vw;
+      font-family: var(--serif);
+      margin: 0;
+      line-height: 6.8vw;
+
+      &.display {
+        font-size: 7vw;
+        font-family: var(--displayFont);
+      }
+
+      @media (max-width: 620px) {
+        font-size: 2.5rem;
+        line-height: 2.7rem;
+
+        &.display {
+          font-size: 3rem;
+          line-height: 3rem;
+          font-family: var(--displayFont);
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      margin: 0;
     }
   }
 
@@ -60,7 +95,7 @@ const HomepageStyle = styled.div`
     align-items: flex-start;
     gap: 1.5rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: 560px) {
       flex-flow: column nowrap;
     }
 
@@ -77,6 +112,8 @@ const HomepageStyle = styled.div`
 `
 
 const Index = ({
+  SEOtitle,
+  SEOdescription,
   title,
   description,
   image,
@@ -90,18 +127,28 @@ const Index = ({
 
   return (
     <>
-      <Seo title={title} description={description} image={SEOimage} />
+      <Seo title={SEOtitle} description={SEOdescription} image={SEOimage} />
       <HomepageStyle>
-        <div className="hr-img">
-          <GatsbyImage image={firstImg} alt={imageAlt} />
-          <div className="hr-title">
-            <Banner content={title} />
-            <p>{description}</p>
+        {image ? (
+          <div className="hr-img">
+            <GatsbyImage image={firstImg} alt={imageAlt} />
+            <div className="hr-title">
+              <Banner content={title} />
+              <p>{description}</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="hr-txt">
+            <h1>Apa yang</h1>
+            {/* <h1>yang</h1> */}
+            <h1 className="display">BOHOK</h1>
+            <h1>katakan?</h1>
+          </div>
+        )}
+
         <div className="hp-posts-roll">
           <div className="posts-roll">
-            <h6>Featured Posts</h6>
+            <h6>Artikel Unggulan</h6>
             <div className="st-line" />
             {FeaturedPostQuery &&
               FeaturedPostQuery.edges.map(({ node }, index) => (
@@ -109,7 +156,7 @@ const Index = ({
               ))}
           </div>
           <div className="posts-roll">
-            <h6>Latest Posts</h6>
+            <h6>Artikel Terkini</h6>
             <div className="st-line" />
             {LatestPostQuery &&
               LatestPostQuery.edges.map(({ node }, index) => (
@@ -130,6 +177,8 @@ const Index = ({
 }
 
 Index.propTypes = {
+  SEOtitle: PropTypes.string,
+  SEOdescription: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
@@ -148,6 +197,8 @@ const IndexTemplate = ({ data }) => {
 
   return (
     <Index
+      SEOtitle={frontmatter.SEO.SEOtitle}
+      SEOdescription={frontmatter.SEO.SEOdescription || frontmatter.description}
       title={frontmatter.title}
       description={frontmatter.description}
       image={frontmatter.featuredImage}
@@ -159,6 +210,8 @@ const IndexTemplate = ({ data }) => {
   )
 }
 
+// image={frontmatter.featuredImage}
+
 IndexTemplate.propTypes = {
   data: PropTypes.object.isRequired,
 }
@@ -169,6 +222,10 @@ export const query = graphql`
   query IndexTemplate($slug: String!) {
     HomePageQuery: markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
+        SEO {
+          SEOtitle
+          SEOdescription
+        }
         title
         description
         featuredImage {
@@ -192,6 +249,7 @@ export const query = graphql`
         frontmatter: {
           templateKey: { eq: "post-template" }
           featuredpost: { eq: true }
+          category: { ne: "pranala" }
         }
       }
       limit: 10
@@ -206,9 +264,7 @@ export const query = graphql`
             title
             description
             date(formatString: "MMM DD, YYYY")
-            path
             category
-            webname
           }
           timeToRead
         }
@@ -216,7 +272,12 @@ export const query = graphql`
     }
     LatestPostQuery: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "post-template" } } }
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "post-template" }
+          category: { ne: "pranala" }
+        }
+      }
       limit: 10
     ) {
       totalCount
@@ -229,9 +290,7 @@ export const query = graphql`
             title
             description
             date(formatString: "MMM DD, YYYY")
-            path
             category
-            webname
           }
           timeToRead
         }

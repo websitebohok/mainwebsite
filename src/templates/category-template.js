@@ -12,8 +12,9 @@ const CategoryStyle = styled.div`
 `
 
 const Category = ({
+  SEOtitle,
+  SEOdescription,
   title,
-  description,
   html,
   category,
   linksGroup,
@@ -21,7 +22,7 @@ const Category = ({
 }) => {
   return (
     <>
-      <Seo title={title} description={description} />
+      <Seo title={SEOtitle} description={SEOdescription} />
       <CategoryStyle>
         <Banner content={title} />
         {html && (
@@ -31,7 +32,7 @@ const Category = ({
           />
         )}
         <div className="br-line" />
-        {category === "links" ? (
+        {category === "pranala" ? (
           <BlogGroup group={linksGroup} category={category} />
         ) : (
           <BlogGroup group={yearGroup} category={category} />
@@ -42,8 +43,9 @@ const Category = ({
 }
 
 Category.propTypes = {
+  SEOtitle: PropTypes.string,
+  SEOdescription: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   html: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   linksGroup: PropTypes.array,
@@ -59,9 +61,10 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <Category
+      SEOtitle={frontmatter.SEO.SEOtitle}
+      SEOdescription={frontmatter.SEO.SEOdescription || excerpt}
       html={html}
       title={frontmatter.title}
-      description={excerpt || frontmatter.description}
       category={category}
       yearGroup={yearGroup}
       linksGroup={linksGroup}
@@ -80,14 +83,17 @@ export const pageQuery = graphql`
   query CategoryTemplate(
     $slug: String!
     $category: String
-    $isLinks: Boolean!
+    $isPranala: Boolean!
   ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt(pruneLength: 160)
       frontmatter {
+        SEO {
+          SEOtitle
+          SEOdescription
+        }
         title
-        description
       }
     }
     allMarkdownRemark(
@@ -99,7 +105,7 @@ export const pageQuery = graphql`
         }
       }
     ) {
-      yearGroup: group(field: fields___year) @skip(if: $isLinks) {
+      yearGroup: group(field: fields___year) @skip(if: $isPranala) {
         edges {
           node {
             fields {
@@ -114,7 +120,7 @@ export const pageQuery = graphql`
         }
         fieldValue
       }
-      linksGroup: group(field: frontmatter___webname) @include(if: $isLinks) {
+      linksGroup: group(field: frontmatter___webname) @include(if: $isPranala) {
         edges {
           node {
             fields {
