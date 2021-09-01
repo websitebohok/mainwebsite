@@ -6,14 +6,13 @@ export const HeaderStyles = styled.header`
   left: 0;
   top: 0;
   box-sizing: border-box;
-  width: 100%;
+  // width: 100%;
   max-height: 682px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   padding-right: 2.5rem;
-  margin: 1.5rem 2.5rem;
-  margin-right: 0;
+  margin: 1.5rem 0 1.5rem 2.5rem;
   background-color: var(--white);
   transition: box-shadow var(--transMed) ease;
   border-right: 1px solid rgba(124, 124, 124, 0.2);
@@ -60,14 +59,14 @@ export const HeaderStyles = styled.header`
       &:hover {
         color: var(--black);
       }
-    }
 
-    img {
-      vertical-align: middle;
-      width: 120px;
+      svg {
+        vertical-align: middle;
+        width: 120px;
 
-      @media (max-width: 900px) {
-        width: 116px;
+        @media (max-width: 900px) {
+          width: 96px;
+        }
       }
     }
 
@@ -189,7 +188,7 @@ export const NavigationStyles = styled.nav`
       height: 1.375rem;
       font-size: 1.375rem;
       margin: 0;
-      margin-right: 1.5rem;
+      margin-right: 1.2rem;
 
       &:last-child {
         margin: 0;
@@ -197,6 +196,15 @@ export const NavigationStyles = styled.nav`
 
       a.social-icon {
         height: 100%;
+
+        &:hover > svg,
+        svg:hover {
+          fill: var(--black);
+        }
+
+        svg {
+          fill: var(--gray);
+        }
       }
     }
   }

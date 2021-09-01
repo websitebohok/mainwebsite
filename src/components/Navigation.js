@@ -9,11 +9,11 @@ import {
 import { NavigationStyles } from "../styles/NavStyles"
 import MenuContext from "./MenuContext"
 
-const Navigation = ({ author, authorSite, telephone }) => {
+const Navigation = ({ author, authorSite, address }) => {
   const [isOpen, setNav] = useContext(MenuContext)
 
   const toggleNav = () => {
-    setNav((isOpen) => !isOpen)
+    setNav([])
   }
 
   return (
@@ -47,17 +47,7 @@ const Navigation = ({ author, authorSite, telephone }) => {
         </ul>
       )}
       <ul className="contactMenu">
-        <li>Jakarta, Indonesia</li>
-        <li>
-          <a
-            className="telephone"
-            href={`tel:${telephone}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {telephone}
-          </a>
-        </li>
+        <li>{address}</li>
         <li>
           <a href={authorSite} target="_blank" rel="noopener noreferrer">
             &copy; {new Date().getFullYear()} {author}
@@ -86,11 +76,7 @@ const Navigation = ({ author, authorSite, telephone }) => {
                 rel="noopener noreferrer"
                 aria-label={item.name}
               >
-                {item.logo ? (
-                  <img src={item.logo} alt={item.name} width={item.logoWidth} />
-                ) : (
-                  item.name
-                )}
+                {item.logo ? item.logo : item.name}
               </a>
             </li>
           ))}

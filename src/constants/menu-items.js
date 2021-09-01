@@ -1,7 +1,9 @@
 import React from "react"
-import { FaInstagram, FaMedium } from "react-icons/fa"
+import { FaInstagram } from "react-icons/fa"
 import { SiGmail } from "react-icons/si"
-import gatsbyLogo from "../images/Gatsby-Logo.svg"
+import GatsbyLogo from "../images/Gatsby-Logo.svg"
+import MediumSymbol from "../images/medium-symbol.svg"
+import SubstackSymbol from "../images/substack-symbol.svg"
 
 export const mainMenuItems = [
   {
@@ -32,19 +34,24 @@ export const mainMenuItems = [
 
 export const socialMenuItems = [
   {
+    icon: <SiGmail />,
+    url: "mailto:kakbohok@gmail.com",
+    name: "Gmail",
+  },
+  {
     icon: <FaInstagram />,
     url: "https://www.instagram.com/bohok",
     name: "Instagram",
   },
   {
-    icon: <FaMedium />,
-    url: "https://alvaryanm.medium.com/",
-    name: "Medium",
+    icon: <SubstackSymbol />,
+    url: "https://bohok.substack.com/",
+    name: "Substack",
   },
   {
-    icon: <SiGmail />,
-    url: "mailto:kakbohok@gmail.com",
-    name: "Gmail",
+    icon: <MediumSymbol />,
+    url: "https://alvaryanm.medium.com/",
+    name: "Medium",
   },
 ]
 
@@ -72,10 +79,10 @@ export const creditMenuItems = [
     logoWidth: null,
   },
   {
-    title: "Didukung oleh",
+    title: "Dibuat dengan",
     name: "Gatsby",
     url: "https://www.gatsbyjs.com/",
-    logo: gatsbyLogo,
+    logo: <GatsbyLogo />,
     logoWidth: "72",
   },
 ]
