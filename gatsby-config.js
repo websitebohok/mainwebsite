@@ -8,23 +8,20 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Bohok`,
-    titleTemplate: `%s | Bohok`,
+    titleTemplate: `%s — Bohok`,
     description: `Arsip Katarsis oleh Bohok.`,
     siteUrl: `https://kakbohok.netlify.app/`,
     image: `src/images/main-img.png`,
+    address: `Jakarta, Indonesia`,
     email: `kakbohok@gmail.com`,
     author: `Alvaryan Maulana`,
-    authorSite: `https://www.kakbohok.com`,
+    authorSite: `https://www.bohok.com`,
     twitterUsername: `@bohok`,
     twitterURL: `https://twitter.com/`,
     instagramURL: `https://www.instagram.com/bohok`,
     mediumURL: `https://alvaryanm.medium.com/`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,8 +34,20 @@ module.exports = {
         icon: `src/images/icon-DM-serif.png`,
       },
     },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
