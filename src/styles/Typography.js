@@ -10,7 +10,6 @@ import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/400-italic.css"
 import "@fontsource/roboto-mono"
 import "@fontsource/dm-serif-display"
-import "@fontsource/montserrat"
 // import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap')
 
 const Typography = createGlobalStyle`
