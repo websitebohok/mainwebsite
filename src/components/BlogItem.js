@@ -16,7 +16,7 @@ const BlogItemStyles = styled.article`
     margin: 0 0 0.25rem;
   }
 
-  h5 {
+  h6 {
     width: 100%;
     margin: 0 0 1rem;
   }
@@ -48,12 +48,12 @@ const BlogItem = ({ nodeObj }) => {
       {category === "pranala" ? (
         <a href={path} target="_blank" rel="noopener noreferrer">
           {date && <p className="subPara">{date}</p>}
-          {title && <h5>{title}</h5>}
+          {title && <h6>{title}</h6>}
         </a>
       ) : (
         <Link to={slug}>
           {date && <p className="subPara">{date}</p>}
-          {title && <h5>{title}</h5>}
+          {title && <h6>{title}</h6>}
         </Link>
       )}
     </BlogItemStyles>

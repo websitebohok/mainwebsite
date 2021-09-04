@@ -13,17 +13,18 @@ const BlogGroupStyle = styled.div`
     div.list-ttl {
       margin-bottom: 1rem;
       display: flex;
-      border-left: 4px solid var(--black);
-      // border-bottom: 2px solid var(--black);
+      border-left: 4px solid var(--gray);
+      // border-bottom: 4px solid var(--gray);
 
       h5 {
         width: auto;
         padding: 0.5rem 1rem 0.5rem 0.5rem;
         margin: 0;
-        // background-color: var(--black);
-        color: var(--black);
+        // background-color: var(--gray);
+        color: var(--gray);
         letter-spacing: 0.5px;
         text-transform: capitalize;
+        // border-bottom: 2px solid var(--gray);
       }
 
       div.st-line {
@@ -33,7 +34,7 @@ const BlogGroupStyle = styled.div`
     }
 
     div.list-items {
-      padding-left: 12px;
+      padding-left: 14px;
     }
   }
 `
