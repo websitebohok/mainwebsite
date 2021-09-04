@@ -61,11 +61,14 @@ export const HeaderStyles = styled.header`
       }
 
       svg {
+        fill: var(--black);
         vertical-align: middle;
         width: 120px;
+        height: 28px;
 
         @media (max-width: 900px) {
           width: 96px;
+          height: 22px;
         }
       }
     }
