@@ -1,8 +1,17 @@
 import { createGlobalStyle } from "styled-components"
 import "@fontsource/lora"
-import "@fontsource/roboto"
+import "@fontsource/roboto/900.css"
+import "@fontsource/roboto/900-italic.css"
+import "@fontsource/roboto/700.css"
+import "@fontsource/roboto/700-italic.css"
+import "@fontsource/roboto/500.css"
+import "@fontsource/roboto/500-italic.css"
+import "@fontsource/roboto/400.css"
+import "@fontsource/roboto/400-italic.css"
 import "@fontsource/roboto-mono"
 import "@fontsource/dm-serif-display"
+import "@fontsource/montserrat"
+// import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap')
 
 const Typography = createGlobalStyle`
 h1 {
@@ -41,18 +50,18 @@ h5,
 h6
  {
   font-family: var(--sansSerif);
-  font-weight: var(--heavyWeight);
+  font-weight: 900;
 }
 
 h2,
 h3,
 h4 {
-  letter-spacing: -1.5px;
+  letter-spacing: 0px;
 }
 
 h5,
 h6 {
-  letter-spacing: -1px;
+  letter-spacing: 0px;
 }
 
 blockquote,

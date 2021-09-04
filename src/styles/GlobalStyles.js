@@ -13,9 +13,9 @@ const GlobalStyles = createGlobalStyle`
     --white: #FFFDFD;
     --blue: #3457D5;
     --lightblue: #D4DCFF;
-    --serif: "Lora", serif;
-    --sansSerif: "Roboto", sans-serif;
-    --monospace: "Roboto Mono";
+    --serif: Lora, serif;
+    --sansSerif: Roboto, sans-serif;
+    --monospace: "Roboto Mono", monospace;
     --displayFont: "DM Serif Display";
     --h1: 3rem;
     --h2: 2.4rem;
