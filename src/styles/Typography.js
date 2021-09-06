@@ -161,11 +161,18 @@ ol {
   }
 }
 
+code {
+    font-family: var(--monospace);
+    padding: 0 0.4rem;
+    background-color: #EEEEEE;
+    object-fit: contain;
+  }
+
 pre {
   margin: 2rem 0;
   padding: 1rem;
   // border-radius: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #EEEEEE;
   white-space: pre-wrap;       /* Since CSS 2.1 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */
@@ -176,6 +183,7 @@ pre {
   code {
     font-family: var(--monospace);
     object-fit: contain;
+    padding: 0;
   }
 
   span {
