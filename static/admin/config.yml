@@ -10,6 +10,12 @@ backend:
 
 local_backend: true
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: websitebohok
+    api_key: 783314219155448
+
 media_folder: static/img
 public_folder: /img
 
