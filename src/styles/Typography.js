@@ -40,6 +40,13 @@ p {
     line-height: 1.625;
     color: var(--black);
   }
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 600px;
+  }
 }
 
 h2,

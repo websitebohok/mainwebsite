@@ -9,4 +9,7 @@ featuredImage: /img/dark-design.jpg
 featuredImageAlt: gelap
 author: Sangs
 ---
+
 HAHAHAHAHAHA WEKWKWK
+
+![color](https://res.cloudinary.com/websitebohok/image/upload/v1630953121/samples/ecommerce/car-interior-design.jpg "judulnya adalah")

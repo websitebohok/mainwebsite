@@ -14,7 +14,7 @@ const BlogPostStyles = styled.div`
   width: 80%;
   // max-width: 656px;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     width: 90%;
   }
 
