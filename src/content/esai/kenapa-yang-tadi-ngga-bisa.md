@@ -9,8 +9,14 @@ featuredImage: https://res.cloudinary.com/websitebohok/image/upload/v1630953070/
 featuredImageAlt: gelap
 author: Sangs
 ---
+
+
 HAHAHAHAHAHA WEKWKWK
 
 ![color](https://res.cloudinary.com/websitebohok/image/upload/v1630953121/samples/ecommerce/car-interior-design.jpg "judulnya adalah")
 
 <span>sebuah caption broooo mudah2an bisa ya</span>
+
+test
+
+<figure><img src="https://res.cloudinary.com/websitebohok/image/upload/v1632130542/Guiding_Block-2_cehga9.jpg" alt="guiding block di pinggir jalan" /><figcaption>mencoba cara baru dalam memasukkan foto</figcaption></figure>
