@@ -170,6 +170,7 @@ ol {
 
 code {
     font-family: var(--monospace);
+    font-size: var(--subPara);
     padding: 0 0.4rem;
     background-color: #EEEEEE;
     object-fit: contain;
@@ -189,14 +190,16 @@ pre {
 
   code {
     font-family: var(--monospace);
+    font-size: var(--subPara);
     object-fit: contain;
     padding: 0;
   }
 
   span {
     font-family: var(--monospace);
+    font-size: var(--subPara);
     object-fit: contain;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     display: inline-block;
 
     &:first-child {
@@ -243,6 +246,23 @@ table {
         border-bottom: none;
       }
     }
+  }
+}
+
+figure {
+  margin: 2rem 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: var(--subPara);
+    font-family: var(--sansSerif);
+    color: var(--gray);
+    margin: 1rem 0;
   }
 }
 

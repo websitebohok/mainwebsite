@@ -18,7 +18,7 @@ export const HeaderStyles = styled.header`
   border-right: 1px solid rgba(124, 124, 124, 0.2);
 
   @media (min-width: 901px) {
-    max-width: 249px;
+    min-width: 240px;
   }
 
   @media (max-width: 900px) {
@@ -135,7 +135,6 @@ export const NavigationStyles = styled.nav`
 
         &:hover {
           color: var(--black);
-          font-weight: var(--mediumWeight);
         }
       }
     }

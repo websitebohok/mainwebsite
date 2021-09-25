@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     --xlPara: 1.25rem;
     --lPara: 1.125rem;
     --para: 1rem;
-    --subPara: 0.8rem;
+    --subPara: 0.85rem;
     --spacing: 1rem;
   }
 
