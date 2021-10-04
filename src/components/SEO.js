@@ -20,7 +20,7 @@ const SEO = ({ title, description, lang, image, article }) => {
   const seo = {
     title: title,
     description: description || defaultDescription,
-    image: `${siteUrl}${image && image.src ? image.src : defaultImage}`,
+    image: image || defaultImage,
     url: `${siteUrl}${pathname}`,
   }
 
@@ -41,8 +41,6 @@ const SEO = ({ title, description, lang, image, article }) => {
         <meta property="og:description" content={seo.description} />
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
-      {image && <meta property="og:image" content={image.width} />}
-      {image && <meta property="og:image" content={image.height} />}
       <meta name="twitter:card" content="summary_large_image" />
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
@@ -61,11 +59,7 @@ export default SEO
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }),
+  image: PropTypes.string,
   article: PropTypes.bool,
 }
 

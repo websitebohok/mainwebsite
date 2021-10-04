@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+// import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import Seo from "../components/SEO"
 import HomePostRoll from "../components/HomePostRoll"
 import styled from "styled-components"
@@ -16,7 +16,9 @@ const HomepageStyle = styled.div`
     // min-height: 300px;
 
     img {
-      min-height: 466px;
+      width: 100%;
+      height: 466px;
+      object-fit: cover;
     }
 
     @media (max-width: 900px) {
@@ -122,29 +124,17 @@ const Index = ({
   FeaturedPostQuery,
   LatestPostQuery,
 }) => {
-  const firstImg = getImage(image)
-  const SEOimage = image ? image.childImageSharp.resize : null
-
   return (
     <>
-      <Seo title={SEOtitle} description={SEOdescription} image={SEOimage} />
+      <Seo title={SEOtitle} description={SEOdescription} />
       <HomepageStyle>
-        {image ? (
-          <div className="hr-img">
-            <GatsbyImage image={firstImg} alt={imageAlt} />
-            <div className="hr-title">
-              <Banner content={title} />
-              <p>{description}</p>
-            </div>
+        <div className="hr-img">
+          <img src={image} alt={imageAlt} loading="lazy" />
+          <div className="hr-title">
+            <Banner content={title} />
+            <p>{description}</p>
           </div>
-        ) : (
-          <div className="hr-txt">
-            <h1>Apa yang</h1>
-            {/* <h1>yang</h1> */}
-            <h1 className="display">BOHOK</h1>
-            <h1>katakan?</h1>
-          </div>
-        )}
+        </div>
 
         <div className="hp-posts-roll">
           <div className="posts-roll">
@@ -181,7 +171,7 @@ Index.propTypes = {
   SEOdescription: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
   imageAlt: PropTypes.string.isRequired,
   html: PropTypes.string,
   FeaturedPostQuery: PropTypes.object.isRequired,
@@ -201,7 +191,7 @@ const IndexTemplate = ({ data }) => {
       SEOdescription={frontmatter.SEO.SEOdescription || frontmatter.description}
       title={frontmatter.title}
       description={frontmatter.description}
-      image={frontmatter.featuredImage}
+      image={frontmatter.heroImage}
       imageAlt={frontmatter.featuredImageAlt}
       html={html}
       FeaturedPostQuery={FeaturedPostQuery}
@@ -209,8 +199,6 @@ const IndexTemplate = ({ data }) => {
     />
   )
 }
-
-// image={frontmatter.featuredImage}
 
 IndexTemplate.propTypes = {
   data: PropTypes.object.isRequired,
@@ -228,16 +216,7 @@ export const query = graphql`
         }
         title
         description
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 466)
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
-        }
+        heroImage
         featuredImageAlt
       }
       html

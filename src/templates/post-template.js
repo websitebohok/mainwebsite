@@ -2,7 +2,7 @@ import React from "react"
 import { useLocation } from "@reach/router"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/SEO"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+// import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PostHeading from "../components/PostHeading"
 import HomePostRoll from "../components/HomePostRoll"
 import styled from "styled-components"
@@ -73,12 +73,9 @@ const Post = ({
 }) => {
   const categoryCase = _.kebabCase(category)
 
-  const firstImg = getImage(image)
-  const SEOimage = image ? image.childImageSharp.resize : null
-
   return (
     <>
-      <Seo title={title} description={description} image={SEOimage} article />
+      <Seo title={title} description={description} image={image} article />
       <BlogPostStyles>
         <PostHeading
           date={date}
@@ -89,12 +86,7 @@ const Post = ({
           timeToRead={timeToRead}
           location={location}
         />
-        {image && (
-          <div className="post-img">
-            <GatsbyImage image={firstImg} alt={imageAlt} />
-            {imageAlt && <div className="img-title">{imageAlt}</div>}
-          </div>
-        )}
+
         {html && (
           <div
             className="blog-post-content"
@@ -127,7 +119,7 @@ Post.propTypes = {
   category: PropTypes.string.isRequired,
   description: PropTypes.string,
   author: PropTypes.string.isRequired,
-  image: PropTypes.object,
+  image: PropTypes.string,
   imageAlt: PropTypes.string,
   location: PropTypes.object.isRequired,
   similarPost: PropTypes.array,
@@ -175,16 +167,7 @@ export const pageQuery = graphql`
         category
         description
         author
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED)
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
-        }
+        featuredImage
         featuredImageAlt
       }
     }

@@ -11,7 +11,7 @@ module.exports = {
     titleTemplate: `%s — Bohok`,
     description: `Arsip Katarsis oleh Bohok.`,
     siteUrl: `https://kakbohok.netlify.app/`,
-    image: `src/images/main-img.png`,
+    image: `https://res.cloudinary.com/bohok/default/main-img.png`,
     address: `Jakarta, Indonesia`,
     email: `kakbohok@gmail.com`,
     author: `Alvaryan Maulana`,

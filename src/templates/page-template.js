@@ -2,28 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import Banner from "../components/Banner"
 import Seo from "../components/SEO"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+// import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
 
 const Page = ({ image, imageAlt, SEOtitle, SEOdescription, title, html }) => {
-  const firstImg = getImage(image)
-  const SEOimage = image ? image.childImageSharp.resize : null
-
   return (
     <>
-      <Seo
-        title={SEOtitle}
-        description={SEOdescription}
-        image={SEOimage}
-        article
-      />
+      <Seo title={SEOtitle} description={SEOdescription} article />
       <div className="page-standard">
         <Banner content={title} />
-        {image && (
-          <div className="post-img">
-            <GatsbyImage image={firstImg} alt={imageAlt} />
-          </div>
-        )}
         {html && (
           <div
             className="page-content"
@@ -36,7 +23,7 @@ const Page = ({ image, imageAlt, SEOtitle, SEOdescription, title, html }) => {
 }
 
 Page.propTypes = {
-  image: PropTypes.object,
+  image: PropTypes.string,
   imageAlt: PropTypes.string,
   SEOtitle: PropTypes.string,
   SEOdescription: PropTypes.string,
@@ -78,16 +65,7 @@ export const pageQuery = graphql`
           SEOdescription
         }
         title
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED)
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
-        }
+        featuredImage
         featuredImageAlt
       }
     }
