@@ -5,7 +5,7 @@ title: In the technology exchange, always cover unpooled systemic risks.
 description: Sint veritatis officiis provident nostrum esse, velit molestias mollitia impedit ut rem nemo voluptas adipisci praesentium, et distinctio dolor eligendi. Nostrum ex accusantium commodi incidunt impedit alias
 date: 2016-01-03
 featuredpost: true
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Francis
 ---

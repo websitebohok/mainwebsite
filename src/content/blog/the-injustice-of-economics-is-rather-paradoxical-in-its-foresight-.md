@@ -5,7 +5,7 @@ title: The injustice of economics is rather paradoxical in its foresight.
 description: Expedita deleniti aut id sed debitis magni ipsum reiciendis dolorum voluptates voluptas culpa animi temporibus recusandae, saepe, rerum natus corrupti voluptatibus
 date: 2017-05-08
 featuredpost: false
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Clemmie
 ---

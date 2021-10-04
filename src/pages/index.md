@@ -5,8 +5,9 @@ SEO:
   SEOdescription: Temukan jawaban dari kegelisahan anda pada situs ini yang dipikirkan dan dijabarkan langsung oleh Kak Bohok! (butuh copywriter, bro)
 title: Website Bohok
 description: Website yang diciptakan untuk Kak bohok supaya beliau punya tempat flexing
-featuredImage: ../content/images/homepage-hero.png
-featuredImageAlt: Homepage hero image
+heroImage: https://res.cloudinary.com/bohok/Guiding_Block-2_cehga9.jpg
+featuredImage: ""
+featuredImageAlt: Selamat datang di website Bohok
 ---
 
 ## Maksud dan Tujuan

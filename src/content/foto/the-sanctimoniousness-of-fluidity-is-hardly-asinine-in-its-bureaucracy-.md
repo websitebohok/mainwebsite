@@ -5,7 +5,7 @@ title: The sanctimoniousness of fluidity is hardly asinine in its bureaucracy.
 description: Mollitia nihil eligendi dolores voluptates voluptatem repellendus corporis tempora quod labore corrupti qui consequatur necessitatibus, temporibus fugiat molestias, doloribus eveniet.
 date: 2018-08-08
 featuredpost: true
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Jedediah
 ---

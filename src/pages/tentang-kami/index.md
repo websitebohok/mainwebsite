@@ -4,9 +4,11 @@ SEO:
   SEOtitle: Siapa Bohok?
   SEOdescription: Beliau adalah seorang cendekiawan yang lahir di Ranah Minang, mengenyam pendidikan di ITB Bandung, dan kini tengah berusaha untuk memperbaiki bangsa.
 title: Bohok adalah...
-featuredImage: ../../content/images/sang.JPG
+featuredImage: ""
 featuredImageAlt: "Dog"
 ---
+
+<figure><img src="https://res.cloudinary.com/bohok/Bohok.jpg" loading="lazy" /><figcaption></figcaption></figure>
 
 #### The Short
 

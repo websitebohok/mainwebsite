@@ -5,7 +5,7 @@ title: Etiam congue orci vel
 description: Pellentesque euismod dapibus ligula, ac tempor quam dapibus a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: 2019-06-03
 featuredpost: true
-featuredImage: ./../images/dark-sky.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dark abstract shapes"
 author: Norberto
 ---

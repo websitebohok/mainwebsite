@@ -5,7 +5,7 @@ title: The tenacity of anthropology is conservative in its realism.
 description: Aut sint libero quod consectetur, earum ut, voluptatem similique possimus provident explicabo voluptates? Sapiente tempore error voluptatem ullam quisquam quo perferendis voluptatibus qui.
 date: 2017-12-31
 featuredpost: false
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Padberg
 ---

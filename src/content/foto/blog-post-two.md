@@ -5,7 +5,7 @@ title: Morbi elit leo, auctor sed lectus
 description: Duis venenatis pretium lorem sit amet sollicitudin. Sed malesuada, nunc imperdiet
 date: 2019-08-26
 featuredpost: false
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Colleen
 ---

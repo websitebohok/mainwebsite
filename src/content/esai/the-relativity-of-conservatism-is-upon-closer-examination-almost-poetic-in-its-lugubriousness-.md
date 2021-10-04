@@ -5,7 +5,7 @@ title: The relativity of conservatism is upon closer examination almost poetic i
 description: Illo molestiae cupiditate rerum, sequi, quisquam hic voluptatem sapiente reiciendis dolorem labore magni itaque recusandae eius consequatur nostrum exercitationem, nemo neque ad quibusdam eos maiores velit libero eum.
 date: 2018-07-24
 featuredpost: false
-featuredImage: ./../images/dark-sky.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dark abstract shapes"
 author: Herbert
 ---

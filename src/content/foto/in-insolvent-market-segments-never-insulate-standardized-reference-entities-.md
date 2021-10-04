@@ -5,7 +5,7 @@ title: In insolvent market segments, never insulate standardized reference entit
 description: Blanditiis perferendis, obcaecati saepe magni nostrum necessitatibus sint quidem alias pariatur facere ad aperiam sunt
 date: 2020-11-09
 featuredpost: true
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Tobin
 ---

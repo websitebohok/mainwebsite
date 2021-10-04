@@ -5,7 +5,7 @@ title: The smart investor this season will plan to prorate counterparty CDOs.
 description: Libero fugit blanditiis eos facere ipsum maxime qui animi quos optio, velit, placeat, rerum nobis minus ducimus cum at fugiat?
 date: 2020-01-11
 featuredpost: false
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Lolita
 ---

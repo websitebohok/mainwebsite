@@ -5,7 +5,7 @@ title: "High-maturity forward rate agreements: in the African sector, always und
 description: Ipsam optio provident alias!
 date: 2019-06-06
 featuredpost: true
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Herbert
 ---

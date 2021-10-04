@@ -5,7 +5,7 @@ title: mencoba ke 2
 description: Pellentesque euismod dapibus ligula, ac tempor quam dapibus a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: 2018-05-20
 featuredpost: false
-featuredImage: ./../images/dark-sky.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dark abstract shapes"
 author: Eleazar
 ---

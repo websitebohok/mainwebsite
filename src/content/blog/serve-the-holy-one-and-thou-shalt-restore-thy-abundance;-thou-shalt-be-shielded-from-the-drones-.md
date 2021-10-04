@@ -5,7 +5,7 @@ title: Serve the Holy One and thou shalt restore thy abundance; thou shalt be sh
 description: Explicabo dolores laudantium iusto provident esse nihil nemo quibusdam tenetur, alias corrupti exercitationem omnis nulla voluptatum eos accusamus blanditiis sapiente laboriosam vel odio fuga quam doloribus expedita!
 date: 2017-08-26
 featuredpost: false
-featuredImage: ../images/dog.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Dog"
 author: Serena
 ---

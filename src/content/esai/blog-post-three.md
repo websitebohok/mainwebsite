@@ -5,7 +5,7 @@ title: Duis convallis eget elit eget efficitur
 description: Aliquam erat volutpat. Suspendisse potenti. Aenean eget tellus neque
 date: 2019-08-26
 featuredpost: false
-featuredImage: ./../images/trees.jpg
+featuredImage: https://res.cloudinary.com/bohok/image/upload/v1630953063/samples/food/dessert.jpg
 featuredImageAlt: "Trees"
 author: Georgette
 ---
