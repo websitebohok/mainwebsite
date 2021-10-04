@@ -1,3 +1,5 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: ver2.0
@@ -8,13 +10,13 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-local_backend: true
-
 media_library:
   name: cloudinary
   config:
     cloud_name: websitebohok
     api_key: 783314219155448
+
+publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
@@ -50,7 +52,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Description", name: "description", widget: "string" }
-          - { label: "Featured Image", name: "featuredImage", widget: image }
+          - { label: "Homepage Image", name: "heroImage", widget: image }
           - {
               label: "Featured Image Alt",
               name: "featuredImageAlt",
@@ -82,7 +84,7 @@ collections:
                 ],
             }
           - { label: "Title", name: "title", widget: "string", required: true }
-          - { label: "Featured Image", name: "featuredImage", widget: image }
+          - { label: "Featured Image", name: "featuredImage", widget: hidden }
           - {
               label: "Featured Image Alt",
               name: "featuredImageAlt",

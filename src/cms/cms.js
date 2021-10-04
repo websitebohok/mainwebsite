@@ -8,3 +8,19 @@ CMS.registerMediaLibrary(cloudinary)
 //Register Editor Components
 CMS.registerEditorComponent(figure)
 // CMS.registerEditorComponent(Figure)
+CMS.registerEditorComponent({
+  id: "separator",
+  label: "---",
+  // A bogus field so that the component doesn't look weird when rendered:
+  fields: [
+    { label: "Separator", widget: "select", options: ["---"], default: "---" },
+  ],
+  // Never match anything so that the separator will be recognized as a horizontal rule when the document is reloaded:
+  pattern: /.^/,
+  toBlock(obj) {
+    return "---"
+  },
+  toPreview(obj) {
+    return "<hr>"
+  },
+})
