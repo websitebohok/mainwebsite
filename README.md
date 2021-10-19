@@ -1,11 +1,11 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://kakbohok.netlify.app">
-    <img alt="Kakbohok Logo" src="/src/images/logo-kakbohok.png" width="200" />
+  <a href="https://bohok.netlify.app">
+    <img alt="Kakbohok Logo" src="/src/images/logo-bohok.png" width="200" />
   </a>
 </p>
 <h1 align="center">
-  Website Kakbohok
+  Website Bohok
 </h1>
 
 ## dev
@@ -58,6 +58,7 @@
 - [x] bebersih src/images
 
 - page SEO title
+
   - [x] index: KakBohok
   - [x] tentang-kami: Siapa KakBohok?
   - [x] esai: Esai Berbasis Penelitian
@@ -68,3 +69,19 @@
   - [x] kontak: Hubungi KakBohok!
   - [x] privasi: Privasi – %s
   - [x] cookies: Cookies – %s
+
+- [x] SEO image
+- [ ] gatsby-config default image (harus fix tidak bisa diubah auto)
+- [x] SEO pages image query
+  - [-] category-template
+  - [-] contact-template
+  - [x] page-template (dihilangkan saja)
+  - [x] index-template
+  - [x] post-template
+- [ ] config.yml
+  - [x] index
+  - [x] esai
+  - [x] foto
+  - [x] blog
+  - [x] pranala
+  - [x] tentang kami (hapus featuredImage)
