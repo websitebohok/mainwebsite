@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/SEO"
-import BlogGroup from "../components/BlogGroup"
+import BlogCategory from "../components/BlogCategory"
 import styled from "styled-components"
 import Banner from "../components/Banner"
 import PropTypes from "prop-types"
@@ -33,9 +33,9 @@ const Category = ({
         )}
         <div className="br-line" />
         {category === "pranala" ? (
-          <BlogGroup group={linksGroup} category={category} />
+          <BlogCategory group={linksGroup} category={category} />
         ) : (
-          <BlogGroup group={yearGroup} category={category} />
+          <BlogCategory group={yearGroup} category={category} />
         )}
       </CategoryStyle>
     </>

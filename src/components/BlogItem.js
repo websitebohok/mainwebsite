@@ -4,7 +4,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 const BlogItemStyles = styled.article`
-  // margin: 0 0 1rem;
+  margin: 1rem 0;
   display: flex;
   width: 100%;
   flex-flow: column nowrap;
@@ -18,7 +18,7 @@ const BlogItemStyles = styled.article`
 
   h6 {
     width: 100%;
-    margin: 0 0 1rem;
+    margin: 0;
   }
 
   a {
