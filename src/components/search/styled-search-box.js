@@ -7,7 +7,6 @@ const open = css`
   cursor: text;
   margin-left: -1.6em;
   padding-left: 1.6em;
-  position: fixed;
 `
 
 const closed = css`

@@ -8,6 +8,9 @@ import {
 } from "../constants/menu-items"
 import { NavigationStyles } from "../styles/NavStyles"
 import MenuContext from "./MenuContext"
+// import SearchContext from "./SearchContext"
+// import Search from "./search"
+// const searchIndices = [{ name: `Bohok`, title: `Bohok` }]
 
 const Navigation = ({ author, authorSite, address }) => {
   const [isOpen, setNav] = useContext(MenuContext)
@@ -15,6 +18,12 @@ const Navigation = ({ author, authorSite, address }) => {
   const toggleNav = () => {
     setNav([])
   }
+
+  // const [isSearch, setSearch] = useContext(SearchContext)
+
+  // const toggleSearch = () => {
+  //   setSearch((isSearch) => !isSearch)
+  // }
 
   return (
     <NavigationStyles className={isOpen ? "open" : "closed"}>
@@ -26,6 +35,17 @@ const Navigation = ({ author, authorSite, address }) => {
             </Link>
           </li>
         ))}
+        {/* <li key="mainMenuSearch" className="nav-link">
+          <Search indices={searchIndices} />
+        </li> */}
+        {/* <li>
+          <h6
+            className={isSearch ? "search" : "notSearch"}
+            onClick={toggleSearch}
+          >
+            Search
+          </h6>
+        </li> */}
       </ul>
       {socialMenuItems && (
         <ul className="socialMenu">

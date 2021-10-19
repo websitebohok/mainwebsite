@@ -3,6 +3,7 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import Burger from "./Burger"
 import Navigation from "./Navigation"
 import MenuContext from "./MenuContext"
+// import SearchContext from "./SearchContext"
 import { HeaderStyles } from "../styles/NavStyles"
 
 const Header = ({ Logo }) => {
@@ -32,6 +33,7 @@ const Header = ({ Logo }) => {
   }, [])
 
   const [isOpen, setNav] = useContext(MenuContext)
+  // const [isSearch, setSearch] = useContext(SearchContext)
 
   const toggleNav = () => {
     setNav([])
@@ -41,7 +43,6 @@ const Header = ({ Logo }) => {
     <HeaderStyles className={scroll ? "scrolled" : null}>
       <div className="head-cont">
         <Link to="/" aria-label="Homepage" onClick={toggleNav}>
-          {/* <img src={Logo} alt={data.site.siteMetadata.title} /> */}
           <Logo />
         </Link>
         <Burger />
