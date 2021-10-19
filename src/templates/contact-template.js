@@ -89,7 +89,7 @@ const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
         <form
           name="contact-kakbohok"
           method="post"
-          action="/contact/thanks/"
+          action="/kontak/terima-kasih/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -102,7 +102,7 @@ const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
             </label>
           </div>
           <p>
-            <FormLabel htmlFor="name">Your Name</FormLabel>
+            <FormLabel htmlFor="name">Nama Anda</FormLabel>
             <FormInput
               type="text"
               name="name"
@@ -111,7 +111,7 @@ const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
             />
           </p>
           <p>
-            <FormLabel htmlFor="email">Email Address</FormLabel>
+            <FormLabel htmlFor="email">Alamat Email</FormLabel>
             <FormInput
               type="email"
               name="email"
@@ -120,7 +120,7 @@ const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
             />
           </p>
           <p>
-            <FormLabel htmlFor="message">Your Message</FormLabel>
+            <FormLabel htmlFor="message">Pesan Anda</FormLabel>
             <FormTextArea
               type="text"
               name="message"
@@ -129,7 +129,7 @@ const Contact = ({ SEOtitle, SEOdescription, html, title }) => {
             />
           </p>
           <p>
-            <Button className="btn-link" text="Send Message" type="submit" />
+            <Button className="btn-link" text="Kirim Pesan" type="submit" />
           </p>
         </form>
       </Form>

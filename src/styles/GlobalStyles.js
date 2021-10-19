@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     --transSlow: 0.3s;
     --black: #2B2B2B;
     --gray: #757575;
+    --lightgray: #c5c5c5;
     --white: #FFFDFD;
     --blue: #3457D5;
     --lightblue: #D4DCFF;
@@ -67,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
    align-items: flex-start;
    margin: 1.5rem 2.5rem;
    width: calc(100% - 2 * 2.5rem);
+   overflow-wrap: break-word;
 
    @media (max-width: 375px) {
      margin: 1.5rem 1.5rem;

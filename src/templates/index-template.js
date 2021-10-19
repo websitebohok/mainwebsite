@@ -6,14 +6,14 @@ import HomePostRoll from "../components/HomePostRoll"
 import styled from "styled-components"
 import Banner from "../components/Banner"
 import PropTypes from "prop-types"
+// import SearchContext from "../components/SearchContext"
 
 const HomepageStyle = styled.div`
   display: flex;
   flex-flow: column nowrap;
 
   .hr-img {
-    // overflow: hidden;
-    // min-height: 300px;
+    position: relative;
 
     img {
       width: 100%;
@@ -37,9 +37,9 @@ const HomepageStyle = styled.div`
       position: absolute;
       box-sizing: border-box;
       transform: translate(0%, -100%);
+      width: 100%;
 
       @media (max-width: 762px) {
-        width: 80%;
         padding: 2rem 1.5rem;
       }
 
@@ -56,37 +56,6 @@ const HomepageStyle = styled.div`
       p {
         margin-left: 0.25rem;
       }
-    }
-  }
-
-  .hr-txt {
-    padding: 5rem 0;
-
-    h1 {
-      font-size: 6.5vw;
-      font-family: var(--serif);
-      margin: 0;
-      line-height: 6.8vw;
-
-      &.display {
-        font-size: 7vw;
-        font-family: var(--displayFont);
-      }
-
-      @media (max-width: 620px) {
-        font-size: 2.5rem;
-        line-height: 2.7rem;
-
-        &.display {
-          font-size: 3rem;
-          line-height: 3rem;
-          font-family: var(--displayFont);
-        }
-      }
-    }
-
-    @media (max-width: 900px) {
-      margin: 0;
     }
   }
 
@@ -124,6 +93,12 @@ const Index = ({
   FeaturedPostQuery,
   LatestPostQuery,
 }) => {
+  // const [isSearch, setSearch] = useContext(SearchContext)
+
+  // const toggleSearch = () => {
+  //   setSearch((isSearch) => !isSearch)
+  // }
+
   return (
     <>
       <Seo title={SEOtitle} description={SEOdescription} />
