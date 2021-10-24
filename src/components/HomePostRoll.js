@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
+const _ = require("lodash")
+
 const PostsItemStyle = styled.article`
   margin-top: 1.5rem;
   display: flex;
@@ -40,22 +42,35 @@ const PostsItemStyle = styled.article`
 const HomePostRoll = ({ nodeObj }) => {
   const {
     fields: { slug },
-    frontmatter: { title, description, date, category },
+    frontmatter: { title, description, date, category, path, webname },
     timeToRead,
   } = nodeObj
 
   return (
     <PostsItemStyle>
-      <Link to={slug}>
-        {category && <p className="hp-category">{category}</p>}
-        {title && <h5>{title}</h5>}
-        {description && <p>{description}</p>}
-        <div className="meta">
-          {date && <p className="subPara">{date}</p>}
-          <p className="subPara bullet">•</p>
-          {timeToRead && <p className="subPara">{timeToRead} min read</p>}
-        </div>
-      </Link>
+      {category === "pranala" ? (
+        <a href={path} target="_blank" rel="noopener noreferrer">
+          {category && <p className="hp-category">{category}</p>}
+          {title && <h5>{title}</h5>}
+          {description && <p>{description}</p>}
+          <div className="meta">
+            {date && <p className="subPara">{date}</p>}
+            <p className="subPara bullet">•</p>
+            {webname && <p className="subPara">{_.capitalize(webname)}</p>}
+          </div>
+        </a>
+      ) : (
+        <Link to={slug}>
+          {category && <p className="hp-category">{category}</p>}
+          {title && <h5>{title}</h5>}
+          {description && <p>{description}</p>}
+          <div className="meta">
+            {date && <p className="subPara">{date}</p>}
+            <p className="subPara bullet">•</p>
+            {timeToRead && <p className="subPara">{timeToRead} min read</p>}
+          </div>
+        </Link>
+      )}
     </PostsItemStyle>
   )
 }

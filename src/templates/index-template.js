@@ -17,7 +17,7 @@ const HomepageStyle = styled.div`
 
     img {
       width: 100%;
-      height: 466px;
+      height: 301px;
       object-fit: cover;
     }
 
@@ -203,7 +203,6 @@ export const query = graphql`
         frontmatter: {
           templateKey: { eq: "post-template" }
           featuredpost: { eq: true }
-          category: { ne: "pranala" }
         }
       }
       limit: 10
@@ -219,6 +218,8 @@ export const query = graphql`
             description
             date(formatString: "MMM DD, YYYY")
             category
+            path
+            webname
           }
           timeToRead
         }
@@ -226,12 +227,7 @@ export const query = graphql`
     }
     LatestPostQuery: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: {
-          templateKey: { eq: "post-template" }
-          category: { ne: "pranala" }
-        }
-      }
+      filter: { frontmatter: { templateKey: { eq: "post-template" } } }
       limit: 10
     ) {
       totalCount
@@ -245,6 +241,8 @@ export const query = graphql`
             description
             date(formatString: "MMM DD, YYYY")
             category
+            path
+            webname
           }
           timeToRead
         }
