@@ -7,18 +7,18 @@ export const HeaderStyles = styled.header`
   top: 0;
   box-sizing: border-box;
   // width: 100%;
-  max-height: 682px;
+  max-height: 640px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  padding-right: 2.5rem;
+  padding-right: 1.5rem;
   margin: 1.5rem 0 1.5rem 2.5rem;
   background-color: var(--white);
   transition: box-shadow var(--transMed) ease;
   border-right: 1px solid rgba(124, 124, 124, 0.2);
 
   @media (min-width: 901px) {
-    min-width: 240px;
+    // min-width: 240px;
   }
 
   @media (max-width: 900px) {
