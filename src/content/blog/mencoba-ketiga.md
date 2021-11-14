@@ -4,12 +4,13 @@ category: blog
 title: mencoba ke 3
 description: Pellentesque euismod dapibus ligula, ac tempor quam dapibus a.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2019-08-26
+date: 2019-08-26T14:20:56.546Z
 featuredpost: true
 featuredImage: https://res.cloudinary.com/websitebohok/image/upload/v1630953058/sample.jpg
 featuredImageAlt: Dark abstract shapes
 author: Augustus
 ---
+
 Doloremque tempora eligendi optio molestiae velit distinctio. Maxime voluptatem ratione aut commodi vel et blanditiis. Voluptatem quam quo nam natus ex delectus. Ullam provident voluptatum autem. Aperiam et fugit ut. Illum totam quae recusandae.
 
 ![dark design](/img/dark-design.jpg)
