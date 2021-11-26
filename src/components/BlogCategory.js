@@ -1,16 +1,6 @@
 import React from "react"
 import BlogGroup from "./BlogGroup"
-import styled, { css } from "styled-components"
-import { renderToStaticMarkup as rtsm } from "react-dom/server"
-import { FaPlus, FaMinus } from "react-icons/fa"
-
-const plusIcon = css`
-  ${rtsm(<FaPlus size={12} color="FFFDFD" />).replace(/"/g, "'")}
-`
-
-const minusIcon = css`
-  ${rtsm(<FaMinus size={12} color="FFFDFD" />).replace(/"/g, "'")}
-`
+import styled from "styled-components"
 
 const BlogCategoryStyle = styled.div`
   width: 100%;
@@ -43,7 +33,7 @@ const BlogCategoryStyle = styled.div`
 
       &:before {
         text-align: center;
-        content: url("data:image/svg+xml; utf8,${plusIcon}");
+        content: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' width='16' height='16'%3E%3Cpath fill='%23FFFDFD' d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'%3E%3C/path%3E%3C/svg%3E");
         float: left;
         margin-right: 1.5rem;
       }
@@ -52,7 +42,7 @@ const BlogCategoryStyle = styled.div`
         background-color: var(--black);
 
         &:before {
-          content: url("data:image/svg+xml; utf8,${minusIcon}");
+          content: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' width='16' height='16'%3E%3Cpath fill='%23FFFDFD' d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z' %3E%3C/path%3E%3C/svg%3E");
         }
       }
     }
