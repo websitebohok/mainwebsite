@@ -99,6 +99,32 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
+              default: "contact-template",
+            }
+          - {
+              label: "SEO",
+              name: "SEO",
+              widget: "object",
+              fields:
+                [
+                  { label: "SEO Title", name: "SEOtitle", widget: "string" },
+                  {
+                    label: "SEO Description",
+                    name: "SEOdescription",
+                    widget: "string",
+                  },
+                ],
+            }
+          - { label: "Title", name: "title", widget: "string", required: true }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/kontak/terima-kasih/index.md"
+        label: "Terima Kasih"
+        name: "terimaKasih"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
               default: "page-template",
             }
           - {
@@ -174,8 +200,8 @@ collections:
     create: false
     files:
       - file: "src/pages/esai/index.md"
-        label: "Esai"
-        name: "esai"
+        label: "Category Esai"
+        name: "category-esai"
         fields:
           - {
               label: "Template Key",
@@ -206,8 +232,8 @@ collections:
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/foto/index.md"
-        label: "Foto"
-        name: "foto"
+        label: "Category Foto"
+        name: "category-foto"
         fields:
           - {
               label: "Template Key",
@@ -238,8 +264,8 @@ collections:
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/blog/index.md"
-        label: "Blog"
-        name: "blog"
+        label: "Category Blog"
+        name: "category-blog"
         fields:
           - {
               label: "Template Key",
@@ -270,8 +296,8 @@ collections:
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/pranala/index.md"
-        label: "Pranala"
-        name: "pranala"
+        label: "Category Pranala"
+        name: "category-pranala"
         fields:
           - {
               label: "Template Key",
@@ -301,8 +327,8 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string", required: true }
           - { label: "Body", name: "body", widget: "markdown" }
-  - name: "esai"
-    label: "Esai"
+  - name: "post-esai"
+    label: "Post Esai"
     folder: "src/content/esai"
     create: true
     editor:
@@ -337,8 +363,8 @@ collections:
         }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "foto"
-    label: "Foto"
+  - name: "post-foto"
+    label: "Post Foto"
     folder: "src/content/foto"
     create: true
     editor:
@@ -373,8 +399,8 @@ collections:
         }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "blog"
-    label: "Blog"
+  - name: "post-blog"
+    label: "Post Blog"
     folder: "src/content/blog"
     create: true
     editor:
@@ -409,8 +435,8 @@ collections:
         }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "pranala"
-    label: "Pranala"
+  - name: "post-pranala"
+    label: "Post Pranala"
     folder: "src/content/pranala"
     create: true
     editor:
