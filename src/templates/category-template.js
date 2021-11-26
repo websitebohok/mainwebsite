@@ -1,56 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Seo from "../components/SEO"
-import BlogCategory from "../components/BlogCategory"
-import styled from "styled-components"
-import Banner from "../components/Banner"
 import PropTypes from "prop-types"
-
-const CategoryStyle = styled.div`
-  width: 100%;
-  box-sizing: border-box;
-`
-
-const Category = ({
-  SEOtitle,
-  SEOdescription,
-  title,
-  html,
-  category,
-  linksGroup,
-  yearGroup,
-}) => {
-  return (
-    <>
-      <Seo title={SEOtitle} description={SEOdescription} />
-      <CategoryStyle>
-        <Banner content={title} />
-        {html && (
-          <div
-            className="page-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        )}
-        <div className="br-line" />
-        {category === "pranala" ? (
-          <BlogCategory group={linksGroup} category={category} />
-        ) : (
-          <BlogCategory group={yearGroup} category={category} />
-        )}
-      </CategoryStyle>
-    </>
-  )
-}
-
-Category.propTypes = {
-  SEOtitle: PropTypes.string,
-  SEOdescription: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  linksGroup: PropTypes.array,
-  yearGroup: PropTypes.array,
-}
+import Category from "./templates-components/CategoryComponents"
+import { HTMLContent } from "../components/Content"
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const {
@@ -64,6 +16,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
       SEOtitle={frontmatter.SEO.SEOtitle}
       SEOdescription={frontmatter.SEO.SEOdescription || excerpt}
       html={html}
+      contentComponent={HTMLContent}
       title={frontmatter.title}
       category={category}
       yearGroup={yearGroup}

@@ -1,35 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Banner from "../components/Banner"
-import Seo from "../components/SEO"
 // import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
-
-const Page = ({ image, imageAlt, SEOtitle, SEOdescription, title, html }) => {
-  return (
-    <>
-      <Seo title={SEOtitle} description={SEOdescription} article />
-      <div className="page-standard">
-        <Banner content={title} />
-        {html && (
-          <div
-            className="page-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        )}
-      </div>
-    </>
-  )
-}
-
-Page.propTypes = {
-  image: PropTypes.string,
-  imageAlt: PropTypes.string,
-  SEOtitle: PropTypes.string,
-  SEOdescription: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  html: PropTypes.string.isRequired,
-}
+import Page from "./templates-components/PageComponents"
+import { HTMLContent } from "../components/Content"
 
 const PageTemplate = ({ data }) => {
   const {
@@ -44,6 +18,7 @@ const PageTemplate = ({ data }) => {
       SEOdescription={frontmatter.SEO.SEOdescription || excerpt}
       title={frontmatter.title}
       html={html}
+      contentComponent={HTMLContent}
     />
   )
 }
