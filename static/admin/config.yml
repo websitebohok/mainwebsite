@@ -88,7 +88,7 @@ collections:
           - {
               label: "Featured Image Alt",
               name: "featuredImageAlt",
-              widget: "string",
+              widget: hidden,
             }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/kontak/index.md"
