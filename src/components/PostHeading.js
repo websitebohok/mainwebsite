@@ -73,11 +73,18 @@ const PostHeading = ({
         <aside className="meta">
           <div className="ml">
             {author && <p className="subPara">{author}</p>}
-            <p className="subPara bullet">•</p>
-            {date && <p className="subPara">{date}</p>}
-            <p className="subPara bullet">•</p>
+            {date && (
+              <>
+                <p className="subPara bullet">•</p>
+                <p className="subPara">{date}</p>
+              </>
+            )}
             {timeToRead && (
-              <p className="subPara">{`${timeToRead} min read`}</p>
+              <>
+                {" "}
+                <p className="subPara bullet">•</p>
+                <p className="subPara">{`${timeToRead} min read`}</p>
+              </>
             )}
           </div>
           <Share facebook twitter linkedin href={location.href} />
