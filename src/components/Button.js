@@ -18,7 +18,7 @@ const ButtonWrapper = styled.button`
   &:focus {
     background-color: var(--white);
     color: var(--blue);
-    border: 1px solid var(--blue);
+    outline: 1px solid var(--blue);
     cursor: pointer;
 
     &:after {

@@ -162,7 +162,6 @@ export const NavigationStyles = styled.nav`
         &.active {
           color: var(--black);
           font-weight: var(--heavyWeight);
-          text-decoration: underline;
         }
 
         &:hover {
@@ -190,10 +189,9 @@ export const NavigationStyles = styled.nav`
       height: 1.375rem;
       font-size: 1.375rem;
       margin: 0;
-      margin-right: 1.2rem;
 
-      &:last-child {
-        margin: 0;
+      &:not(:last-child) {
+        margin-right: 1.2rem;
       }
 
       a.social-icon {
@@ -219,10 +217,10 @@ export const NavigationStyles = styled.nav`
 
     li {
       font-size: var(--subPara);
-      margin: 0 0 0.5rem;
+      margin: 0;
 
-      &:last-child {
-        margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
       }
     }
   }
@@ -248,10 +246,9 @@ export const NavigationStyles = styled.nav`
     li {
       font-size: var(--subPara);
       margin: 0;
-      margin-right: 1.5rem;
 
-      &:last-child {
-        margin: 0;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
       }
     }
   }
